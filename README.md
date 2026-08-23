@@ -2,7 +2,7 @@
 
 Public landing page for **MA TradeLab** (Professional Trading Journal, Strategy Validation & Analytics).
 
-- **Live URL**: https://m4whw.github.io/MATradeLab/
+- **Live URL**: https://m4whw.github.io/MATradelab/
 - **Author**: Mohamed Abdelaziz ([mohamed-abdelaziz.com](https://mohamed-abdelaziz.com))
 - **Platform**: Windows 10/11 (64-bit)
 
