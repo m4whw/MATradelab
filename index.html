@@ -1,0 +1,1344 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MA TradeLab — Professional Trading Journal, Strategy Validation & Analytics</title>
+  <meta name="description" content="MA TradeLab is a local-first, professional Windows desktop workstation for systematic traders and prop firm evaluations. Features rule-based strategy validation, pre-trade decision scoring, trading calendar, and deep analytics.">
+  <meta name="keywords" content="MA TradeLab, trading journal, strategy validation, prop firm evaluation, pre-trade decision engine, futures trading journal, NQ ES GC, trading analytics, local-first trading software">
+  <meta name="author" content="Mohamed Abdelaziz">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://m4whw.github.io/MATradeLab/">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MA TradeLab — Professional Trading Journal & Strategy Analytics">
+  <meta property="og:description" content="Validate your edge before executing. Local-first desktop trading workspace with pre-trade checklist scoring, prop challenge guardrails, trading calendar, and strategy analytics.">
+  <meta property="og:image" content="https://m4whw.github.io/MATradeLab/og-image.png">
+  <meta property="og:url" content="https://m4whw.github.io/MATradeLab/">
+  <meta property="og:site_name" content="MA TradeLab">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MA TradeLab — Professional Trading Journal & Strategy Analytics">
+  <meta name="twitter:description" content="Validate your edge before executing. Local-first desktop trading workspace with pre-trade checklist scoring, prop challenge guardrails, trading calendar, and strategy analytics.">
+  <meta name="twitter:image" content="https://m4whw.github.io/MATradeLab/og-image.png">
+
+  <!-- Schema.org SoftwareApplication JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "MA TradeLab",
+    "operatingSystem": "Windows 10, Windows 11 (64-bit)",
+    "applicationCategory": "FinanceApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Mohamed Abdelaziz",
+      "url": "https://mohamed-abdelaziz.com"
+    },
+    "description": "Professional Desktop Trading Journal, Strategy Validation & Analytics Station for Systematic Traders."
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #08090c;
+      --bg-card: #0f1218;
+      --bg-card-hover: #161b24;
+      --bg-input: #0b0e14;
+      --border: #1e2532;
+      --border-gold: #c9a227;
+      --gold: #f59e0b;
+      --gold-light: #fbbf24;
+      --gold-dark: #b45309;
+      --emerald: #10b981;
+      --emerald-bg: rgba(16, 185, 129, 0.1);
+      --crimson: #ef4444;
+      --crimson-bg: rgba(239, 68, 68, 0.1);
+      --text: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 18px;
+      --shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+      --shadow-gold: 0 10px 30px -10px rgba(245,158,11,0.2);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    [dir="rtl"] body {
+      font-family: "Cairo", "Segoe UI", Tahoma, Arial, sans-serif;
+    }
+    
+    * {
+      font-feature-settings: "tnum" 1, "lnum" 1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(8, 9, 12, 0.88);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: -0.3px;
+    }
+    .brand img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+    .brand span.gold {
+      color: var(--gold-light);
+    }
+    .brand span.tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--gold-light);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    .nav-links a:hover {
+      color: var(--gold-light);
+      transition: color 0.15s;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .lang-switcher {
+      display: flex;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3px;
+    }
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: var(--gold);
+      color: #08090c;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      color: #0b0d13;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+    }
+    .btn-gold:hover {
+      background: linear-gradient(135deg, #fcd34d, #fbbf24);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      background: var(--bg-card);
+      border-color: var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      border-color: var(--border-gold);
+      color: var(--gold-light);
+      background: var(--bg-card-hover);
+    }
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+    }
+    .btn-lg {
+      padding: 16px 32px;
+      font-size: 1.05rem;
+      border-radius: var(--radius);
+    }
+
+    .hero {
+      padding: 80px 0 60px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(8, 9, 12, 0) 70%);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      color: var(--gold-light);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .hero-badge .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 10px var(--gold);
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    .hero h1 span.gold-text {
+      background: linear-gradient(135deg, #ffffff 30%, #fbbf24 85%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p.lead {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      max-width: 720px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mockup-wrapper {
+      margin-top: 50px;
+      position: relative;
+    }
+    .mockup-window {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(245, 158, 11, 0.1);
+      overflow: hidden;
+      text-align: left;
+    }
+    [dir="rtl"] .mockup-window {
+      text-align: right;
+    }
+    .mockup-header {
+      background: #0b0d13;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .mockup-dots {
+      display: flex;
+      gap: 8px;
+    }
+    .mockup-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #232a36;
+    }
+    .mockup-dot.close { background: #ef4444; }
+    .mockup-dot.min { background: #f59e0b; }
+    .mockup-dot.max { background: #10b981; }
+    .mockup-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold-light);
+    }
+    .mockup-body {
+      padding: 24px;
+      background: linear-gradient(180deg, #0f1218 0%, #08090c 100%);
+    }
+
+    .dashboard-preview {
+      display: grid;
+      gap: 20px;
+    }
+    .preview-kpis {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .kpi-box {
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+    }
+    .kpi-box .label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .kpi-box .val {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .kpi-box .val.gold { color: var(--gold-light); }
+    .kpi-box .val.green { color: var(--emerald); }
+    .kpi-box .val.red { color: var(--crimson); }
+    .kpi-box .sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .preview-chart-box {
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      position: relative;
+    }
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .chart-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+    .chart-legend {
+      display: flex;
+      gap: 16px;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+    .chart-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .chart-svg {
+      width: 100%;
+      height: 160px;
+    }
+
+    section {
+      padding: 90px 0;
+      border-top: 1px solid var(--border);
+    }
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 56px;
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+    .section-sub {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+      gap: 28px;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .card:hover {
+      border-color: rgba(245, 158, 11, 0.4);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-gold);
+    }
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-sm);
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: var(--gold-light);
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.2px;
+    }
+    .card p {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+    .card-features {
+      margin-top: 16px;
+      list-style: none;
+    }
+    .card-features li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      padding: 4px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-features li::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .spotlight {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 64px;
+    }
+    .spotlight.reverse {
+      direction: rtl;
+    }
+    .spotlight.reverse > * {
+      direction: ltr;
+    }
+    [dir="rtl"] .spotlight.reverse {
+      direction: ltr;
+    }
+    [dir="rtl"] .spotlight.reverse > * {
+      direction: rtl;
+    }
+    .spotlight-info h3 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.3px;
+    }
+    .spotlight-info p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .spotlight-visual {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .checklist-demo {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-input);
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    .badge-pass {
+      background: var(--emerald-bg);
+      color: var(--emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+    .badge-req {
+      background: rgba(245, 158, 11, 0.12);
+      color: var(--gold-light);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .spec-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      text-align: center;
+    }
+    .spec-card .val {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+    }
+    .spec-card .desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .download-section {
+      background: linear-gradient(180deg, var(--bg-card) 0%, #06070a 100%);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: var(--radius-lg);
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.7);
+    }
+    .download-section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .download-details {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin: 24px 0 32px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+    }
+
+    .dev-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .dev-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 900;
+      color: #0b0d13;
+      flex-shrink: 0;
+    }
+    .dev-info h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .dev-info p.title {
+      color: var(--gold-light);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .dev-info p.bio {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 0;
+      background: #050608;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a:hover {
+      color: var(--gold-light);
+    }
+
+    @media (max-width: 900px) {
+      .hero h1 { font-size: 2.3rem; }
+      .spotlight { grid-template-columns: 1fr; gap: 32px; }
+      .preview-kpis { grid-template-columns: repeat(2, 1fr); }
+      .specs-grid { grid-template-columns: repeat(2, 1fr); }
+      .dev-card { flex-direction: column; text-align: center; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .preview-kpis { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; width: 100%; }
+      .btn-lg { width: 100%; }
+    }
+  </style>
+</head><body>
+
+  <!-- Top Header Navigation -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="brand">
+          <img src="logo.png" alt="MA TradeLab Logo">
+          <span>MA <span class="gold">TradeLab</span></span>
+          <span class="tag">v1.0.0</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#capabilities" data-i18n="nav_capabilities">Capabilities</a>
+          <a href="#engine" data-i18n="nav_engine">Decision Engine</a>
+          <a href="#prop" data-i18n="nav_prop">Prop Analytics</a>
+          <a href="#calendar" data-i18n="nav_calendar">Calendar</a>
+          <a href="#architecture" data-i18n="nav_architecture">Architecture</a>
+          <a href="#developer" data-i18n="nav_developer">Developer</a>
+        </div>
+
+        <div class="nav-actions">
+          <div class="lang-switcher">
+            <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+            <button class="lang-btn" id="btn-ar" onclick="setLang('ar')">العربية</button>
+          </div>
+          <a href="#download" class="btn btn-gold btn-sm" data-i18n="nav_download">Download</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse"></span>
+          <span data-i18n="hero_badge">Professional Desktop Trading Journal & Strategy Analytics</span>
+        </div>
+
+        <h1 data-i18n="hero_title">
+          Master Your Edge. <br>
+          <span class="gold-text">Validate Before You Execute.</span>
+        </h1>
+
+        <p class="lead" data-i18n="hero_lead">
+          A local-first, privacy-driven desktop workstation designed for systematic futures & forex traders and prop firm evaluations. Rule-based pre-trade checklist scoring, loss limit guardrails, Gregorian calendar tracking, and immutable journal audits.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#download" class="btn btn-gold btn-lg" data-i18n="hero_cta_download">
+            ⚡ Download for Windows x64
+          </a>
+          <a href="#capabilities" class="btn btn-outline btn-lg" data-i18n="hero_cta_explore">
+            Explore Capabilities ↓
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span>🛡️ <strong data-i18n="meta_privacy">100% Local-First & Zero Telemetry</strong></span>
+          <span>⚡ <strong data-i18n="meta_perf">Single-File Native Win64 (.NET 8)</strong></span>
+          <span>🔒 <strong data-i18n="meta_crypto">DPAPI Encryption & SHA-256 Audit</strong></span>
+          <span>🌐 <strong data-i18n="meta_bilingual">Dual English & Arabic Interface</strong></span>
+        </div>
+      </div>
+
+      <!-- Live Mockup Preview -->
+      <div class="mockup-wrapper">
+        <div class="mockup-window">
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <div class="mockup-dot close"></div>
+              <div class="mockup-dot min"></div>
+              <div class="mockup-dot max"></div>
+            </div>
+            <div class="mockup-title">MA TradeLab — Prop Challenge ($100k Evaluation Phase 1)</div>
+            <div style="font-size:0.75rem; color:#64748b;">💼 Topstep / Apex / FTMO Isolated</div>
+          </div>
+          <div class="mockup-body">
+            <div class="dashboard-preview">
+              <!-- Objective KPI Cards -->
+              <div class="preview-kpis">
+                <div class="kpi-box">
+                  <div class="label" data-i18n="kpi_balance">Account Balance</div>
+                  <div class="val gold">$104,850.00</div>
+                  <div class="sub" data-i18n="kpi_start_bal">Starting: $100,000.00</div>
+                </div>
+                <div class="kpi-box">
+                  <div class="label" data-i18n="kpi_pnl">Total Realized P&L</div>
+                  <div class="val green">+$4,850.00</div>
+                  <div class="sub" data-i18n="kpi_return">+4.85% Account Return</div>
+                </div>
+                <div class="kpi-box">
+                  <div class="label" data-i18n="kpi_dd">Current Drawdown</div>
+                  <div class="val red">-$650.00</div>
+                  <div class="sub" data-i18n="kpi_dd_sub">Max Loss Limit: $10,000.00</div>
+                </div>
+                <div class="kpi-box">
+                  <div class="label" data-i18n="kpi_target">Profit Target Progress</div>
+                  <div class="val green">48.5%</div>
+                  <div class="sub" data-i18n="kpi_target_sub">$5,150.00 needed to target</div>
+                </div>
+              </div>
+
+              <!-- Equity Growth Chart Simulation -->
+              <div class="preview-chart-box">
+                <div class="chart-header">
+                  <div class="chart-title" data-i18n="chart_title">Equity Growth & Drawdown Progression</div>
+                  <div class="chart-legend">
+                    <span><span class="legend-dot" style="background:#f59e0b;"></span> <strong data-i18n="leg_equity">Equity</strong></span>
+                    <span><span class="legend-dot" style="background:#10b981;"></span> <strong data-i18n="leg_target">Profit Target ($110k)</strong></span>
+                    <span><span class="legend-dot" style="background:#ef4444;"></span> <strong data-i18n="leg_maxloss">Max Loss Level ($90k)</strong></span>
+                  </div>
+                </div>
+
+                <!-- SVG Native Dark/Gold Curve -->
+                <svg class="chart-svg" viewBox="0 0 800 160" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
+                      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.0"/>
+                    </linearGradient>
+                  </defs>
+                  <line x1="0" y1="20" x2="800" y2="20" stroke="#10b981" stroke-dasharray="4,4" stroke-width="1.2" opacity="0.6"/>
+                  <line x1="0" y1="140" x2="800" y2="140" stroke="#ef4444" stroke-dasharray="4,4" stroke-width="1.2" opacity="0.6"/>
+                  <line x1="0" y1="80" x2="800" y2="80" stroke="#64748b" stroke-dasharray="3,3" stroke-width="1" opacity="0.4"/>
+                  <polygon points="0,160 0,80 100,75 200,88 300,65 400,55 500,62 600,42 700,38 800,32 800,160" fill="url(#goldGrad)"/>
+                  <polyline points="0,80 100,75 200,88 300,65 400,55 500,62 600,42 700,38 800,32" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linejoin="round"/>
+                  <circle cx="100" cy="75" r="3.5" fill="#f59e0b" stroke="#08090c" stroke-width="1"/>
+                  <circle cx="200" cy="88" r="3.5" fill="#f59e0b" stroke="#08090c" stroke-width="1"/>
+                  <circle cx="300" cy="65" r="3.5" fill="#f59e0b" stroke="#08090c" stroke-width="1"/>
+                  <circle cx="400" cy="55" r="3.5" fill="#f59e0b" stroke="#08090c" stroke-width="1"/>
+                  <circle cx="500" cy="62" r="3.5" fill="#f59e0b" stroke="#08090c" stroke-width="1"/>
+                  <circle cx="600" cy="42" r="3.5" fill="#f59e0b" stroke="#08090c" stroke-width="1"/>
+                  <circle cx="700" cy="38" r="3.5" fill="#f59e0b" stroke="#08090c" stroke-width="1"/>
+                  <circle cx="800" cy="32" r="4.5" fill="#fbbf24" stroke="#08090c" stroke-width="1.5"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Capabilities Grid -->
+  <section id="capabilities">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="tag_capabilities">Comprehensive Feature Matrix</span>
+        <h2 class="section-title" data-i18n="title_capabilities">Built for Discipline, Precision & Systematic Edge</h2>
+        <p class="section-sub" data-i18n="sub_capabilities">Everything serious futures and forex traders need to systematically audit, execute, and scale their trading business.</p>
+      </div>
+
+      <div class="grid-3">
+        <!-- 1. Strategy Validation Engine -->
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <h3 data-i18n="feat_strat_title">Strategy Rule Engine</h3>
+          <p data-i18n="feat_strat_desc">Design custom quantitative trading models with weighted checklist rules, mandatory requirements, and customizable minimum score thresholds.</p>
+          <ul class="card-features">
+            <li data-i18n="feat_strat_1">Weighted condition hierarchy (0-100%)</li>
+            <li data-i18n="feat_strat_2">Mandatory kill-switch rules</li>
+            <li data-i18n="feat_strat_3">Instant rule score calculation</li>
+          </ul>
+        </div>
+
+        <!-- 2. Pre-Trade Decision Engine -->
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3 data-i18n="feat_pre_title">Pre-Trade Decision Engine</h3>
+          <p data-i18n="feat_pre_desc">Evaluate setups before risking capital. Compute real-time tick/point value metrics, risk parameters, contracts/lots, and enforce execution discipline.</p>
+          <ul class="card-features">
+            <li data-i18n="feat_pre_1">Futures (NQ, ES, GC, CL) & Forex</li>
+            <li data-i18n="feat_pre_2">Automatic R:R and dollar risk sizing</li>
+            <li data-i18n="feat_pre_3">EXECUTE / DO NOT EXECUTE gating</li>
+          </ul>
+        </div>
+
+        <!-- 3. Prop Account Performance -->
+        <div class="card">
+          <div class="card-icon">🏆</div>
+          <h3 data-i18n="feat_prop_title">Prop Account Performance</h3>
+          <p data-i18n="feat_prop_desc">Dedicated challenge dashboard with independent tracking for Topstep, Apex, FTMO, and custom broker accounts with strict guardrails.</p>
+          <ul class="card-features">
+            <li data-i18n="feat_prop_1">Daily loss buffer monitoring</li>
+            <li data-i18n="feat_prop_2">Trailing maximum drawdown tracking</li>
+            <li data-i18n="feat_prop_3">Profit target & trading days progression</li>
+          </ul>
+        </div>
+
+        <!-- 4. Trading Calendar -->
+        <div class="card">
+          <div class="card-icon">📅</div>
+          <h3 data-i18n="feat_cal_title">Gregorian Trading Calendar</h3>
+          <p data-i18n="feat_cal_desc">Interactive monthly performance heatmaps, weekly aggregation metrics, win/loss day tallies, and single-click drill-down to daily trades in the journal.</p>
+          <ul class="card-features">
+            <li data-i18n="feat_cal_1">Strict Gregorian calendar in EN & AR</li>
+            <li data-i18n="feat_cal_2">Daily P&L and total R multiples</li>
+            <li data-i18n="feat_cal_3">Direct journal day inspection</li>
+          </ul>
+        </div>
+
+        <!-- 5. Advanced Analytics -->
+        <div class="card">
+          <div class="card-icon">📈</div>
+          <h3 data-i18n="feat_analytics_title">Deep Edge Analytics</h3>
+          <p data-i18n="feat_analytics_desc">Calculate mathematical expectancy, profit factor, R-multiple distributions, score-bracket performance, and rule impact delta analysis.</p>
+          <ul class="card-features">
+            <li data-i18n="feat_analytics_1">Expectancy & Profit Factor formulas</li>
+            <li data-i18n="feat_analytics_2">Condition impact edge analysis</li>
+            <li data-i18n="feat_analytics_3">Cumulative equity curve progression</li>
+          </ul>
+        </div>
+
+        <!-- 6. Local-First & Zero Telemetry -->
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h3 data-i18n="feat_privacy_title">100% Local-First Privacy</h3>
+          <p data-i18n="feat_privacy_desc">All journal records, strategy rules, screenshots, and account balances remain on your local machine in an encrypted SQLite database.</p>
+          <ul class="card-features">
+            <li data-i18n="feat_privacy_1">Zero cloud tracking or third-party servers</li>
+            <li data-i18n="feat_privacy_2">Windows DPAPI credential encryption</li>
+            <li data-i18n="feat_privacy_3">SHA-256 historical snapshot audit</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Deep Dive 1: Pre-Trade Decision Engine Spotlight -->
+  <section id="engine" style="background: var(--bg-card);">
+    <div class="container">
+      <div class="spotlight">
+        <div class="spotlight-info">
+          <span class="section-tag" data-i18n="tag_engine_spotlight">Pre-Trade Discipline Engine</span>
+          <h3 data-i18n="title_engine_spotlight">Stop Impulsive Execution. Score Every Trade Objectively.</h3>
+          <p data-i18n="desc_engine_spotlight">MA TradeLab acts as a quantitative firewall between your analysis and market execution. Before you place an order, the engine evaluates your setup against pre-configured strategy conditions and calculates exact position size and dollar risk.</p>
+          <ul class="card-features">
+            <li data-i18n="engine_point_1">Real-time risk & position calculation for Futures (NQ, ES, GC) & FX</li>
+            <li data-i18n="engine_point_2">Hard kill-switch prevents trades when required rules fail</li>
+            <li data-i18n="engine_point_3">Immutable historical condition snapshots attached to trade records</li>
+          </ul>
+        </div>
+        <div class="spotlight-visual">
+          <div class="checklist-demo">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+              <span style="font-weight:700; font-size:0.9rem; color:var(--gold-light);">Strategy: NQ VWAP Continuation</span>
+              <span class="badge-pass">Score: 85.0% (EXECUTE)</span>
+            </div>
+            <div class="checklist-item">
+              <span>1. Higher Timeframe Trend Alignment</span>
+              <div><span class="badge-req">Required</span> <span class="badge-pass">PASS (30%)</span></div>
+            </div>
+            <div class="checklist-item">
+              <span>2. Discount / Premium FVG Retracement</span>
+              <div><span class="badge-req">Required</span> <span class="badge-pass">PASS (30%)</span></div>
+            </div>
+            <div class="checklist-item">
+              <span>3. Liquidity Sweep Before Entry</span>
+              <div><span class="badge-pass">PASS (20%)</span></div>
+            </div>
+            <div class="checklist-item">
+              <span>4. Relative Volume Confirmation leg</span>
+              <div><span style="color:var(--text-muted); font-size:0.75rem;">OPTIONAL</span> <span style="color:var(--crimson); font-weight:700; font-size:0.75rem; margin-left:6px;">FAIL (0%)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Dive 2: Prop Performance & Account Isolation -->
+  <section id="prop">
+    <div class="container">
+      <div class="spotlight reverse">
+        <div class="spotlight-info">
+          <span class="section-tag" data-i18n="tag_prop_spotlight">Multi-Account Isolation</span>
+          <h3 data-i18n="title_prop_spotlight">Strict Account Isolation with Dynamic Challenge Guardrails</h3>
+          <p data-i18n="desc_prop_spotlight">Manage multiple evaluation phases and funded accounts simultaneously without data cross-contamination. Each account maintains its own starting balance, drawdown watermark, daily loss limit, and trading days count.</p>
+          <ul class="card-features">
+            <li data-i18n="prop_point_1">Strict database-level AccountId filtering — zero trade leakage</li>
+            <li data-i18n="prop_point_2">Dynamic daily loss limit buffer & trailing drawdown watermark</li>
+            <li data-i18n="prop_point_3">Global header & dashboard account selectors synchronized in real-time</li>
+          </ul>
+        </div>
+        <div class="spotlight-visual">
+          <div style="background:var(--bg-input); border:1px solid var(--border); border-radius:8px; padding:18px;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
+              <span style="font-weight:700; font-size:0.88rem; color:var(--text);">Account: Apex 150K Funded</span>
+              <span style="color:var(--emerald); font-weight:700; font-size:0.8rem;">● PASSED</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:var(--text-secondary); margin-bottom:6px;">
+              <span>Daily Loss Buffer Remaining</span>
+              <strong style="color:var(--gold-light);">$3,850.00 / $5,000.00</strong>
+            </div>
+            <div style="background:var(--bg-card); height:6px; border-radius:3px; overflow:hidden; margin-bottom:14px;">
+              <div style="background:var(--emerald); width:77%; height:100%;"></div>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:var(--text-secondary); margin-bottom:6px;">
+              <span>Max Loss Limit Remaining</span>
+              <strong style="color:var(--gold-light);">$8,450.00 / $10,000.00</strong>
+            </div>
+            <div style="background:var(--bg-card); height:6px; border-radius:3px; overflow:hidden;">
+              <div style="background:var(--gold); width:84.5%; height:100%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Architecture & Specifications -->
+  <section id="architecture" style="background: var(--bg-card);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-i18n="tag_tech">Engineering & Architecture</span>
+        <h2 class="section-title" data-i18n="title_tech">Built on Modern Native Windows Technologies</h2>
+        <p class="section-sub" data-i18n="sub_tech">Engineered with Clean Architecture and zero third-party cloud dependencies for instantaneous desktop performance.</p>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-card">
+          <div class="val">.NET 8 (C#)</div>
+          <div class="desc" data-i18n="spec_runtime">Modern High-Performance Runtime</div>
+        </div>
+        <div class="spec-card">
+          <div class="val">WPF & MVVM</div>
+          <div class="desc" data-i18n="spec_ui">Hardware-Accelerated Native UI</div>
+        </div>
+        <div class="spec-card">
+          <div class="val">SQLite & EF Core</div>
+          <div class="desc" data-i18n="spec_db">Embedded Local ACID Storage</div>
+        </div>
+        <div class="spec-card">
+          <div class="val">DPAPI Encryption</div>
+          <div class="desc" data-i18n="spec_security">Windows Native Data Protection</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download & Release Section -->
+  <section id="download">
+    <div class="container">
+      <div class="download-section">
+        <span class="section-tag" data-i18n="tag_download">Official Release</span>
+        <h2 style="font-size:2.2rem; font-weight:800; margin-bottom:12px;" data-i18n="title_download">Download MA TradeLab for Windows</h2>
+        <p style="color:var(--text-secondary); max-width:620px; margin:0 auto;" data-i18n="sub_download">
+          Self-contained standalone executable for 64-bit Windows. No installer or .NET framework pre-installation required. Just download and run.
+        </p>
+
+        <div class="download-details">
+          <span>📦 <strong>MA TradeLab.exe</strong></span>
+          <span>💾 <strong>v1.0.0 (Win-x64)</strong></span>
+          <span>📁 <strong>~74 MB (Self-Contained)</strong></span>
+          <span>💻 <strong>Windows 10 / 11 (64-bit)</strong></span>
+        </div>
+
+        <a href="https://github.com/m4whw/MATradeLab/releases/latest" class="btn btn-gold btn-lg" style="box-shadow:0 8px 30px rgba(245,158,11,0.35);" data-i18n="btn_download_release">
+          ⬇️ Download MA TradeLab v1.0.0 (.exe)
+        </a>
+        <div style="margin-top:16px; font-size:0.8rem; color:var(--text-muted);" data-i18n="download_note">
+          100% Free of adware, telemetry, or cloud dependencies. Runs entirely offline.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Developer -->
+  <section id="developer" style="background: var(--bg-card);">
+    <div class="container">
+      <div class="dev-card">
+        <div class="dev-avatar">MA</div>
+        <div class="dev-info">
+          <h3>Mohamed Abdelaziz</h3>
+          <p class="title" data-i18n="dev_title">Software Engineer & Quantitative Systematic Trader</p>
+          <p class="bio" data-i18n="dev_bio">
+            Creator of MA TradeLab and proprietary trading software solutions. Dedicated to building robust, privacy-first desktop tools that bridge the gap between quantitative strategy validation, risk management, and flawless market execution.
+          </p>
+          <div style="margin-top:14px; font-size:0.88rem;">
+            <a href="https://mohamed-abdelaziz.com" target="_blank" rel="noopener" style="color:var(--gold-light); font-weight:600;">🌐 mohamed-abdelaziz.com</a>
+            <span style="color:var(--text-muted); margin:0 10px;">•</span>
+            <a href="https://github.com/m4whw" target="_blank" rel="noopener" style="color:var(--gold-light); font-weight:600;">GitHub: @m4whw</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <strong style="color:var(--text);">MA TradeLab</strong> — <span data-i18n="footer_rights">Professional Trading Journal & Strategy Analytics.</span>
+          <div style="margin-top:4px; font-size:0.8rem;">Copyright © 2026 Mohamed Abdelaziz. All rights reserved.</div>
+        </div>
+        <div class="footer-links">
+          <a href="#capabilities" data-i18n="nav_capabilities">Capabilities</a>
+          <a href="#download" data-i18n="nav_download">Download</a>
+          <a href="https://mohamed-abdelaziz.com" target="_blank" rel="noopener">Author Website</a>
+          <a href="https://github.com/m4whw" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Bilingual Language Script (English / Arabic) -->
+  <script>
+    const translations = {
+      en: {
+        nav_capabilities: "Capabilities",
+        nav_engine: "Decision Engine",
+        nav_prop: "Prop Analytics",
+        nav_calendar: "Calendar",
+        nav_architecture: "Architecture",
+        nav_developer: "Developer",
+        nav_download: "Download",
+        hero_badge: "Professional Desktop Trading Journal & Strategy Analytics",
+        hero_title: "Master Your Edge. <br><span class=\"gold-text\">Validate Before You Execute.</span>",
+        hero_lead: "A local-first, privacy-driven desktop workstation designed for systematic futures & forex traders and prop firm evaluations. Rule-based pre-trade checklist scoring, loss limit guardrails, Gregorian calendar tracking, and immutable journal audits.",
+        hero_cta_download: "⚡ Download for Windows x64",
+        hero_cta_explore: "Explore Capabilities ↓",
+        meta_privacy: "100% Local-First & Zero Telemetry",
+        meta_perf: "Single-File Native Win64 (.NET 8)",
+        meta_crypto: "DPAPI Encryption & SHA-256 Audit",
+        meta_bilingual: "Dual English & Arabic Interface",
+        kpi_balance: "Account Balance",
+        kpi_start_bal: "Starting: $100,000.00",
+        kpi_pnl: "Total Realized P&L",
+        kpi_return: "+4.85% Account Return",
+        kpi_dd: "Current Drawdown",
+        kpi_dd_sub: "Max Loss Limit: $10,000.00",
+        kpi_target: "Profit Target Progress",
+        kpi_target_sub: "$5,150.00 needed to target",
+        chart_title: "Equity Growth & Drawdown Progression",
+        leg_equity: "Equity",
+        leg_target: "Profit Target ($110k)",
+        leg_maxloss: "Max Loss Level ($90k)",
+        tag_capabilities: "Comprehensive Feature Matrix",
+        title_capabilities: "Built for Discipline, Precision & Systematic Edge",
+        sub_capabilities: "Everything serious futures and forex traders need to systematically audit, execute, and scale their trading business.",
+        feat_strat_title: "Strategy Rule Engine",
+        feat_strat_desc: "Design custom quantitative trading models with weighted checklist rules, mandatory requirements, and customizable minimum score thresholds.",
+        feat_strat_1: "Weighted condition hierarchy (0-100%)",
+        feat_strat_2: "Mandatory kill-switch rules",
+        feat_strat_3: "Instant rule score calculation",
+        feat_pre_title: "Pre-Trade Decision Engine",
+        feat_pre_desc: "Evaluate setups before risking capital. Compute real-time tick/point value metrics, risk parameters, contracts/lots, and enforce execution discipline.",
+        feat_pre_1: "Futures (NQ, ES, GC, CL) & Forex",
+        feat_pre_2: "Automatic R:R and dollar risk sizing",
+        feat_pre_3: "EXECUTE / DO NOT EXECUTE gating",
+        feat_prop_title: "Prop Account Performance",
+        feat_prop_desc: "Dedicated challenge dashboard with independent tracking for Topstep, Apex, FTMO, and custom broker accounts with strict guardrails.",
+        feat_prop_1: "Daily loss buffer monitoring",
+        feat_prop_2: "Trailing maximum drawdown tracking",
+        feat_prop_3: "Profit target & trading days progression",
+        feat_cal_title: "Gregorian Trading Calendar",
+        feat_cal_desc: "Interactive monthly performance heatmaps, weekly aggregation metrics, win/loss day tallies, and single-click drill-down to daily trades in the journal.",
+        feat_cal_1: "Strict Gregorian calendar in EN & AR",
+        feat_cal_2: "Daily P&L and total R multiples",
+        feat_cal_3: "Direct journal day inspection",
+        feat_analytics_title: "Deep Edge Analytics",
+        feat_analytics_desc: "Calculate mathematical expectancy, profit factor, R-multiple distributions, score-bracket performance, and rule impact delta analysis.",
+        feat_analytics_1: "Expectancy & Profit Factor formulas",
+        feat_analytics_2: "Condition impact edge analysis",
+        feat_analytics_3: "Cumulative equity curve progression",
+        feat_privacy_title: "100% Local-First Privacy",
+        feat_privacy_desc: "All journal records, strategy rules, screenshots, and account balances remain on your local machine in an encrypted SQLite database.",
+        feat_privacy_1: "Zero cloud tracking or third-party servers",
+        feat_privacy_2: "Windows DPAPI credential encryption",
+        feat_privacy_3: "SHA-256 historical snapshot audit",
+        tag_engine_spotlight: "Pre-Trade Discipline Engine",
+        title_engine_spotlight: "Stop Impulsive Execution. Score Every Trade Objectively.",
+        desc_engine_spotlight: "MA TradeLab acts as a quantitative firewall between your analysis and market execution. Before you place an order, the engine evaluates your setup against pre-configured strategy conditions and calculates exact position size and dollar risk.",
+        engine_point_1: "Real-time risk & position calculation for Futures (NQ, ES, GC) & FX",
+        engine_point_2: "Hard kill-switch prevents trades when required rules fail",
+        engine_point_3: "Immutable historical condition snapshots attached to trade records",
+        tag_prop_spotlight: "Multi-Account Isolation",
+        title_prop_spotlight: "Strict Account Isolation with Dynamic Challenge Guardrails",
+        desc_prop_spotlight: "Manage multiple evaluation phases and funded accounts simultaneously without data cross-contamination. Each account maintains its own starting balance, drawdown watermark, daily loss limit, and trading days count.",
+        prop_point_1: "Strict database-level AccountId filtering — zero trade leakage",
+        prop_point_2: "Dynamic daily loss limit buffer & trailing drawdown watermark",
+        prop_point_3: "Global header & dashboard account selectors synchronized in real-time",
+        tag_tech: "Engineering & Architecture",
+        title_tech: "Built on Modern Native Windows Technologies",
+        sub_tech: "Engineered with Clean Architecture and zero third-party cloud dependencies for instantaneous desktop performance.",
+        spec_runtime: "Modern High-Performance Runtime",
+        spec_ui: "Hardware-Accelerated Native UI",
+        spec_db: "Embedded Local ACID Storage",
+        spec_security: "Windows Native Data Protection",
+        tag_download: "Official Release",
+        title_download: "Download MA TradeLab for Windows",
+        sub_download: "Self-contained standalone executable for 64-bit Windows. No installer or .NET framework pre-installation required. Just download and run.",
+        btn_download_release: "⬇️ Download MA TradeLab v1.0.0 (.exe)",
+        download_note: "100% Free of adware, telemetry, or cloud dependencies. Runs entirely offline.",
+        dev_title: "Software Engineer & Quantitative Systematic Trader",
+        dev_bio: "Creator of MA TradeLab and proprietary trading software solutions. Dedicated to building robust, privacy-first desktop tools that bridge the gap between quantitative strategy validation, risk management, and flawless market execution.",
+        footer_rights: "Professional Trading Journal & Strategy Analytics."
+      },
+      ar: {
+        nav_capabilities: "الميزات",
+        nav_engine: "محرك القرار",
+        nav_prop: "حسابات التمويل",
+        nav_calendar: "التقويم",
+        nav_architecture: "البنية البرمجية",
+        nav_developer: "المطور",
+        nav_download: "التحميل",
+        hero_badge: "سجل تداول احترافي ومحرك تقييم الاستراتيجيات لسطح المكتب",
+        hero_title: "أحكم سيطرتك على ميزتك التنافسية. <br><span class=\"gold-text\">قيّم بدقة قبل التنفيذ في السوق.</span>",
+        hero_lead: "محطة عمل مكتبية مستقلة ومحلية بالكامل، صُممت خصيصاً لمتداولي العقود الآجلة والفوركس واجتياز اختبارات شركات التمويل. تقييم دقيق لقواعد الاستراتيجية، وحماية من تجاوز حدود الخسارة، وتقويم ميلادي تفاعلي، وتوثيق غير قابل للتعديل.",
+        hero_cta_download: "⚡ تحميل لويندوز (Windows x64)",
+        hero_cta_explore: "استكشف القدرات والميزات ↓",
+        meta_privacy: "محلية 100% وبدون أي تتبع سحابي",
+        meta_perf: "ملف تنفيذي مدمج بالكامل (.NET 8)",
+        meta_crypto: "تشفير DPAPI وتوثيق SHA-256",
+        meta_bilingual: "واجهة ثنائية اللغة (عربي / إنجليزي)",
+        kpi_balance: "رصيد الحساب",
+        kpi_start_bal: "الرصيد الابتدائي: $100,000.00",
+        kpi_pnl: "إجمالي الربح المحقق",
+        kpi_return: "+4.85% عائد الحساب",
+        kpi_dd: "التراجع الحالي (Drawdown)",
+        kpi_dd_sub: "حد الخسارة الأقصى: $10,000.00",
+        kpi_target: "التقدم نحو الهدف الربحي",
+        kpi_target_sub: "متبقي للهدف: $5,150.00",
+        chart_title: "مخطط نمو حقوق الملكية ومستويات الأمان",
+        leg_equity: "حقوق الملكية (Equity)",
+        leg_target: "الهدف الربحي ($110k)",
+        leg_maxloss: "حد الخسارة الأقصى ($90k)",
+        tag_capabilities: "مصفوفة الميزات والقدرات",
+        title_capabilities: "صُمم لترسيخ الانضباط والدقة والمنهجية العلمية",
+        sub_capabilities: "كل ما يحتاجه متداولو العقود الآجلة والفوركس لتوثيق صفقاتهم واختبار استراتيجياتهم وتوسيع نطاق أعمالهم بثقة.",
+        feat_strat_title: "محرك بناء الاستراتيجيات",
+        feat_strat_desc: "صمم نماذجك الكمية بقوائم تدقيق مرجحة، وشروط إلزامية لا تقبل التجاوز، وحد أدنى مخصص للدرجات المطلوبة.",
+        feat_strat_1: "هيكل مرجح للأوزان (0-100%)",
+        feat_strat_2: "شروط إلزامية قاطعة للتنفيذ",
+        feat_strat_3: "حساب فوري وموضوعي للدرجة",
+        feat_pre_title: "محرك القرار قبل التنفيذ",
+        feat_pre_desc: "قيّم الصفقة بدقة قبل المخاطرة برأس المال. حساب فوري لقيمة النقاط، وحجم العقود، وإلزام المتداول بالانضباط.",
+        feat_pre_1: "العقود الآجلة (NQ, ES, GC) والفوركس",
+        feat_pre_2: "حساب آلي للعائد مقابل المخاطرة R:R",
+        feat_pre_3: "توصية واضحة: نفّذ / لا تنفّذ",
+        feat_prop_title: "أداء حسابات التمويل (Prop)",
+        feat_prop_desc: "لوحة تحكم مخصصة لكل حساب تمويل (Topstep, Apex, FTMO) بشكل مستقل تماماً مع رصد مستمر لحدود الأمان.",
+        feat_prop_1: "رصد هامش الأمان اليومي المتبقي",
+        feat_prop_2: "تتبع التراجع الأقصى والمتحرك بدقة",
+        feat_prop_3: "تتبع أيام التداول والهدف الربحي",
+        feat_cal_title: "تقويم تداول ميلادي تفاعلي",
+        feat_cal_desc: "عرض أداء الصفقات عبر خريطة حرارية شهرية ميلادية، وملخص أسبوعي، وتوزيع لأيام الربح والخسارة، مع فحص مباشر للصفقات.",
+        feat_cal_1: "تقويم ميلادي دقيق بالعربية والإنجليزية",
+        feat_cal_2: "عرض P&L اليومي ومضاعفات R",
+        feat_cal_3: "انتقال بنقرة واحدة لصفقات اليوم بالدفتر",
+        feat_analytics_title: "تحليلات الأداء المتقدمة",
+        feat_analytics_desc: "حساب التوقع الرياضي (Expectancy)، وعامل الربح (Profit Factor)، وتوزيع مضاعفات R، وتأثير كل شرط على الميزة التنافسية.",
+        feat_analytics_1: "معادلات Expectancy و Profit Factor الدقيقة",
+        feat_analytics_2: "تحليل تأثير الشروط على نسبة النجاح",
+        feat_analytics_3: "منحنى نمو تراكمي لحقوق الملكية",
+        feat_privacy_title: "خصوصية محلية 100%",
+        feat_privacy_desc: "جميع بيانات التداول واستراتيجياتك وصور الشارتات تُحفظ محلياً على جهازك في قاعدة بيانات SQLite مشفرة.",
+        feat_privacy_1: "صفر تتبع سحابي أو خوادم خارجية",
+        feat_privacy_2: "تشفير Windows DPAPI لبيانات الاعتماد",
+        feat_privacy_3: "توثيق تاريخي للشروط بتشفير SHA-256",
+        tag_engine_spotlight: "محرك الانضباط قبل التداول",
+        title_engine_spotlight: "توقف عن الصفقات العاطفية. قيّم كل فرصة بموضوعية.",
+        desc_engine_spotlight: "يعمل MA TradeLab كجدار حماية كمي بين تحليلك وتنفيذك في السوق. قبل فتح أي صفقة، يقيم المحرك مدى استيفاء شروط الاستراتيجية ويحسب حجم العقد والمخاطرة بالدولار بدقة متناهية.",
+        engine_point_1: "حساب المخاطرة وحجم العقود فورياً لعقود NQ و ES و GC والفوركس",
+        engine_point_2: "شرط إلزامي يمنع التنفيذ في حال فشل أي قاعدة أساسية",
+        engine_point_3: "حفظ لقطة تاريخية غير قابلة للتغيير لحالة الشروط مع كل صفقة",
+        tag_prop_spotlight: "عزل كامل للحسابات",
+        title_prop_spotlight: "عزل تام لكل حساب مع رصد حي لقواعد التحدي",
+        desc_prop_spotlight: "أدر حسابات التقييم المتعددة والحسابات الممولة في آن واحد بدون أي تداخل في البيانات. كل حساب يحتفظ برصيده الابتدائي، وقمة رصيده، وحدوده اليومية والقصوى بشكل مستقل.",
+        prop_point_1: "فلترة صارمة على مستوى قاعدة البيانات بـ AccountId لمنع التسرب",
+        prop_point_2: "رصد فوري لهامش الخسارة اليومي والتراجع المتحرك",
+        prop_point_3: "تزامن فوري بين محدد الحساب في الرأس ولوحة التحكم",
+        tag_tech: "الهندسة والبنية البرمجية",
+        title_tech: "مبني على أحدث تقنيات ويندوز الأصلية",
+        sub_tech: "مطور وفق معمارية Clean Architecture وبدون أي اعتمادات سحابية لتوفير أداء فائق السرعة والاستجابة.",
+        spec_runtime: "بيئة تشغيل حديثة عالية الأداء",
+        spec_ui: "واجهة مستخدم أصلية بتسريع عتادي",
+        spec_db: "قاعدة بيانات محلية مدمجة ومعيارية",
+        spec_security: "حماية بيانات Windows DPAPI الأصلية",
+        tag_download: "الإصدار الرسمي",
+        title_download: "تحميل برنامج MA TradeLab لويندوز",
+        sub_download: "ملف تنفيذي مستقل ومدمج بالكامل لنظام Windows 64-bit. لا يتطلب أي برامج تثبيت أو تثبيت مسبق لإطار .NET. حمّل وشغّل مباشرة.",
+        btn_download_release: "⬇️ تحميل MA TradeLab v1.0.0 (.exe)",
+        download_note: "خالٍ 100% من الإعلانات أو التتبع أو الاتصال بالسحابة. يعمل محلياً بالكامل.",
+        dev_title: "مهندس برمجيات ومتداول كمي منهجي",
+        dev_bio: "مبتكر MA TradeLab وحلول البرمجيات المالية المتقدمة. متخصص في تطوير برمجيات مكتبية عالية الأمان والأداء لسد الفجوة بين التحليل الكمي، وإدارة المخاطر، والانضباط التنفيذي.",
+        footer_rights: "سجل تداول احترافي ومحرك تقييم الاستراتيجيات."
+      }
+    };
+
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerHTML = translations[lang][key];
+        }
+      });
+
+      localStorage.setItem('matradelab_lang', lang);
+    }
+
+    const savedLang = localStorage.getItem('matradelab_lang') || 'en';
+    setLang(savedLang);
+  </script>
+</body>
+</html>
