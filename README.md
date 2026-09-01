@@ -67,7 +67,7 @@
 | **Runtime / بيئة التشغيل** | .NET 8.0 Desktop Runtime (x64) |
 | **Architecture / لغة البرمجة** | C# 12 / WPF (MVVM Clean Architecture) |
 | **Database / قاعدة البيانات** | SQLite (Offline-First / Embedded) |
-| **Installer / المثبت** | Standalone Single-File Setup (~42 MB) |
+| **Installer / المثبت** | Standalone Single-File Setup (~40 MB) |
 | **Languages / اللغات** | العربية والإنجليزية (Dual Native UI) |
 | **Theme / المظهر** | Dark Theme فاخر بتدرجات ذهبية |
 
