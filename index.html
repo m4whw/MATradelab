@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MA TradeLab — Professional Trading Journal, Strategy Validation & Analytics</title>
-  <meta name="description" content="MA TradeLab is a local-first, professional Windows desktop workstation for systematic traders and prop firm evaluations. Features rule-based strategy validation, pre-trade decision scoring, trading calendar, and deep analytics.">
-  <meta name="keywords" content="MA TradeLab, trading journal, strategy validation, prop firm evaluation, pre-trade decision engine, futures trading journal, NQ ES GC, trading analytics, local-first trading software">
+  <title>MA TradeLab v2.3.0 — Professional Desktop Trading Journal, Prop Firm Engine & Financial Management</title>
+  <meta name="description" content="MA TradeLab is an ultra-high performance Windows desktop workstation for systematic futures, forex, and prop firm traders. Features pre-trade decision scoring, prop firm risk engine (Apex, Topstep, FTMO), personal and trading financial management, economic calendar with studio voice alerts, and 100% offline local privacy.">
+  <meta name="keywords" content="MA TradeLab, trading journal, prop firm engine, pre-trade decision engine, financial management for traders, net worth tracker, futures trading journal, forex trading journal, NQ ES GC, apex trader funding, topstep, ftmo, trading analytics, desktop trading workstation, local-first trading software, c# wpf trading journal">
   <meta name="author" content="Mohamed Abdelaziz">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://m4whw.github.io/MATradelab/">
@@ -14,16 +14,16 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="MA TradeLab — Professional Trading Journal & Strategy Analytics">
-  <meta property="og:description" content="Validate your edge before executing. Local-first desktop trading workspace with pre-trade checklist scoring, prop challenge guardrails, trading calendar, and strategy analytics.">
+  <meta property="og:title" content="MA TradeLab v2.3.0 — Professional Trading Journal, Prop Firm Engine & Financial Management">
+  <meta property="og:description" content="Local-first Windows desktop workstation for futures & prop firm traders. Pre-trade decision scoring, prop challenge guardrails, trading financial management, economic voice alerts, and 100% offline local privacy.">
   <meta property="og:image" content="https://m4whw.github.io/MATradelab/og-image.png">
   <meta property="og:url" content="https://m4whw.github.io/MATradelab/">
   <meta property="og:site_name" content="MA TradeLab">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MA TradeLab — Professional Trading Journal & Strategy Analytics">
-  <meta name="twitter:description" content="Validate your edge before executing. Local-first desktop trading workspace with pre-trade checklist scoring, prop challenge guardrails, trading calendar, and strategy analytics.">
+  <meta name="twitter:title" content="MA TradeLab v2.3.0 — Professional Trading Journal, Prop Firm Engine & Financial Management">
+  <meta name="twitter:description" content="Local-first Windows desktop workstation for futures & prop firm traders. Pre-trade decision scoring, prop challenge guardrails, trading financial management, economic voice alerts, and 100% offline local privacy.">
   <meta name="twitter:image" content="https://m4whw.github.io/MATradelab/og-image.png">
 
   <!-- Schema.org SoftwareApplication JSON-LD -->
@@ -32,6 +32,7 @@
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "MA TradeLab",
+    "softwareVersion": "2.3.0",
     "operatingSystem": "Windows 10, Windows 11 (64-bit)",
     "applicationCategory": "FinanceApplication",
     "offers": {
@@ -44,7 +45,18 @@
       "name": "Mohamed Abdelaziz",
       "url": "https://mohamed-abdelaziz.com"
     },
-    "description": "Professional Desktop Trading Journal, Strategy Validation & Analytics Station for Systematic Traders."
+    "description": "Professional Desktop Trading Journal, Prop Firm Risk Engine, Pre-Trade Decision Scoring & Comprehensive Financial Management Workstation for Systematic Futures & Forex Traders.",
+    "featureList": [
+      "Smart Multi-Asset Trading Journal (Futures, Forex, Equities)",
+      "Prop Firm Intelligence Engine (Topstep, Apex, FTMO, Tradeify)",
+      "Pre-Trade Quantitative Decision Engine & Position Sizing",
+      "Personal & Trading Financial Management & Net Worth Tracking",
+      "Live Economic Calendar with Studio Human Voice Alerts",
+      "Direct Platform Connectors (MetaTrader 5, NinjaTrader 8, ATAS)",
+      "DeepCharts & MenthorQ Gamma Levels Converter",
+      "Live Trading Radio & Ambient Focus Station",
+      "100% Local-First Offline Privacy with Windows DPAPI"
+    ]
   }
   </script>
 
@@ -144,8 +156,8 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
-      font-size: 0.92rem;
+      gap: 20px;
+      font-size: 0.88rem;
       color: var(--text-secondary);
       font-weight: 500;
     }
@@ -219,8 +231,8 @@
       font-size: 0.85rem;
     }
     .btn-lg {
-      padding: 16px 32px;
-      font-size: 1.05rem;
+      padding: 14px 28px;
+      font-size: 1.02rem;
       border-radius: var(--radius);
     }
 
@@ -283,7 +295,7 @@
     .hero p.lead {
       font-size: 1.2rem;
       color: var(--text-secondary);
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto 36px;
       line-height: 1.7;
     }
@@ -598,6 +610,27 @@
       font-weight: 700;
       font-size: 0.75rem;
     }
+    .badge-due {
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--crimson);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+    .badge-audio {
+      background: rgba(245, 158, 11, 0.12);
+      color: var(--gold-light);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
 
     .specs-grid {
       display: grid;
@@ -728,7 +761,8 @@
       .btn-lg { width: 100%; }
     }
   </style>
-</head><body>
+</head>
+<body>
 
   <!-- Top Header Navigation -->
   <header>
@@ -744,7 +778,8 @@
           <a href="#capabilities" data-i18n="nav_capabilities">Capabilities</a>
           <a href="#engine" data-i18n="nav_engine">Decision Engine</a>
           <a href="#prop" data-i18n="nav_prop">Prop Analytics</a>
-          <a href="#calendar" data-i18n="nav_calendar">Calendar</a>
+          <a href="#finance" data-i18n="nav_finance">Financial Management</a>
+          <a href="#calendar" data-i18n="nav_calendar">Calendar & Audio</a>
           <a href="#architecture" data-i18n="nav_architecture">Architecture</a>
           <a href="#developer" data-i18n="nav_developer">Developer</a>
         </div>
@@ -766,7 +801,7 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="pulse"></span>
-          <span data-i18n="hero_badge">Professional Desktop Trading Journal & Strategy Analytics</span>
+          <span data-i18n="hero_badge">Professional Desktop Trading Journal, Prop Engine & Financial Management</span>
         </div>
 
         <h1 data-i18n="hero_title">
@@ -775,7 +810,7 @@
         </h1>
 
         <p class="lead" data-i18n="hero_lead">
-          A local-first, privacy-driven desktop workstation designed for systematic futures & forex traders and prop firm evaluations. Rule-based pre-trade checklist scoring, loss limit guardrails, Gregorian calendar tracking, and immutable journal audits.
+          A local-first, privacy-driven desktop workstation designed for systematic futures & forex traders, prop firm challenges, and personal financial management. Rule-based pre-trade checklist scoring, loss limit guardrails, studio voice news alerts, and comprehensive double-entry net worth tracking.
         </p>
 
         <div class="hero-actions">
@@ -880,11 +915,11 @@
       <div class="section-header">
         <span class="section-tag" data-i18n="tag_capabilities">Comprehensive Feature Matrix</span>
         <h2 class="section-title" data-i18n="title_capabilities">Built for Discipline, Precision & Systematic Edge</h2>
-        <p class="section-sub" data-i18n="sub_capabilities">Everything serious futures and forex traders need to systematically audit, execute, and scale their trading business.</p>
+        <p class="section-sub" data-i18n="sub_capabilities">Everything serious futures, forex, and prop traders need to systematically validate setups, protect capital, track net worth, and scale their trading business.</p>
       </div>
 
       <div class="grid-3">
-        <!-- 1. Strategy Validation Engine -->
+        <!-- 1. Strategy Rule Engine -->
         <div class="card">
           <div class="card-icon">⚙️</div>
           <h3 data-i18n="feat_strat_title">Strategy Rule Engine</h3>
@@ -908,11 +943,11 @@
           </ul>
         </div>
 
-        <!-- 3. Prop Account Performance -->
+        <!-- 3. Prop Account Intelligence -->
         <div class="card">
           <div class="card-icon">🏆</div>
-          <h3 data-i18n="feat_prop_title">Prop Account Performance</h3>
-          <p data-i18n="feat_prop_desc">Dedicated challenge dashboard with independent tracking for Topstep, Apex, FTMO, and custom broker accounts with strict guardrails.</p>
+          <h3 data-i18n="feat_prop_title">Prop Firm Intelligence (PFIE)</h3>
+          <p data-i18n="feat_prop_desc">Dedicated challenge dashboard with pre-configured rules for 50+ prop firms (Topstep, Apex, Tradeify, FTMO) with automated guardrails.</p>
           <ul class="card-features">
             <li data-i18n="feat_prop_1">Daily loss buffer monitoring</li>
             <li data-i18n="feat_prop_2">Trailing maximum drawdown tracking</li>
@@ -920,19 +955,43 @@
           </ul>
         </div>
 
-        <!-- 4. Trading Calendar -->
+        <!-- 4. Personal & Trading Financial Management (NEW v2.3.0) -->
         <div class="card">
-          <div class="card-icon">📅</div>
-          <h3 data-i18n="feat_cal_title">Gregorian Trading Calendar</h3>
-          <p data-i18n="feat_cal_desc">Interactive monthly performance heatmaps, weekly aggregation metrics, win/loss day tallies, and single-click drill-down to daily trades in the journal.</p>
+          <div class="card-icon">💰</div>
+          <h3 data-i18n="feat_finance_title">Personal & Trading Finance</h3>
+          <p data-i18n="feat_finance_desc">Track bank accounts, broker capital, crypto, and cash. Monitor trading subscriptions, data feeds, and hardware with live Net Worth analytics.</p>
           <ul class="card-features">
-            <li data-i18n="feat_cal_1">Strict Gregorian calendar in EN & AR</li>
-            <li data-i18n="feat_cal_2">Daily P&L and total R multiples</li>
-            <li data-i18n="feat_cal_3">Direct journal day inspection</li>
+            <li data-i18n="feat_finance_1">Double-entry multi-account ledger</li>
+            <li data-i18n="feat_finance_2">Trading expense & subscription sentinel</li>
+            <li data-i18n="feat_finance_3">Live Net Worth & 5 native vector charts</li>
           </ul>
         </div>
 
-        <!-- 5. Advanced Analytics -->
+        <!-- 5. Economic Calendar & Studio Audio Alerts -->
+        <div class="card">
+          <div class="card-icon">🎙️</div>
+          <h3 data-i18n="feat_econ_title">Economic Calendar & Studio Audio</h3>
+          <p data-i18n="feat_econ_desc">Live macroeconomic news tracking (CPI, NFP, FOMC) with studio-recorded human voice countdown announcements (15m, 5m, 1m).</p>
+          <ul class="card-features">
+            <li data-i18n="feat_econ_1">Studio human voice countdowns in EN & AR</li>
+            <li data-i18n="feat_econ_2">Second-of-release slippage warning chime</li>
+            <li data-i18n="feat_econ_3">Event-specific filtering and volume controls</li>
+          </ul>
+        </div>
+
+        <!-- 6. Direct Platform Connectors -->
+        <div class="card">
+          <div class="card-icon">🔌</div>
+          <h3 data-i18n="feat_connectors_title">Direct Platform Connectors</h3>
+          <p data-i18n="feat_connectors_desc">Zero-latency Localhost IPC integration with MetaTrader 5, NinjaTrader 8, and ATAS for instantaneous automatic trade logging.</p>
+          <ul class="card-features">
+            <li data-i18n="feat_connectors_1">MetaTrader 5 MQL5 EA on port 18082</li>
+            <li data-i18n="feat_connectors_2">NinjaTrader 8 C# Add-on on port 18080</li>
+            <li data-i18n="feat_connectors_3">ATAS Order-Flow Connector on port 18081</li>
+          </ul>
+        </div>
+
+        <!-- 7. Deep Edge Analytics -->
         <div class="card">
           <div class="card-icon">📈</div>
           <h3 data-i18n="feat_analytics_title">Deep Edge Analytics</h3>
@@ -944,7 +1003,19 @@
           </ul>
         </div>
 
-        <!-- 6. Local-First & Zero Telemetry -->
+        <!-- 8. Gregorian Trading Calendar -->
+        <div class="card">
+          <div class="card-icon">📅</div>
+          <h3 data-i18n="feat_cal_title">Gregorian Trading Calendar</h3>
+          <p data-i18n="feat_cal_desc">Interactive monthly performance heatmaps, weekly aggregation metrics, win/loss day tallies, and single-click drill-down to daily trades in the journal.</p>
+          <ul class="card-features">
+            <li data-i18n="feat_cal_1">Strict Gregorian calendar in EN & AR</li>
+            <li data-i18n="feat_cal_2">Daily P&L and total R multiples</li>
+            <li data-i18n="feat_cal_3">Direct journal day inspection</li>
+          </ul>
+        </div>
+
+        <!-- 9. 100% Local-First Privacy -->
         <div class="card">
           <div class="card-icon">🔒</div>
           <h3 data-i18n="feat_privacy_title">100% Local-First Privacy</h3>
@@ -958,6 +1029,7 @@
       </div>
     </div>
   </section>
+
   <!-- Deep Dive 1: Pre-Trade Decision Engine Spotlight -->
   <section id="engine" style="background: var(--bg-card);">
     <div class="container">
@@ -991,7 +1063,7 @@
               <div><span class="badge-pass">PASS (20%)</span></div>
             </div>
             <div class="checklist-item">
-              <span>4. Relative Volume Confirmation leg</span>
+              <span>4. Relative Volume Confirmation</span>
               <div><span style="color:var(--text-muted); font-size:0.75rem;">OPTIONAL</span> <span style="color:var(--crimson); font-weight:700; font-size:0.75rem; margin-left:6px;">FAIL (0%)</span></div>
             </div>
           </div>
@@ -1040,6 +1112,111 @@
     </div>
   </section>
 
+  <!-- Deep Dive 3: Personal & Trading Financial Management (NEW v2.3.0) -->
+  <section id="finance" style="background: var(--bg-card);">
+    <div class="container">
+      <div class="spotlight">
+        <div class="spotlight-info">
+          <span class="section-tag" data-i18n="tag_finance_spotlight">Personal & Trading Finance (v2.3.0)</span>
+          <h3 data-i18n="title_finance_spotlight">Complete Financial Clarity: From Market P&L to True Net Worth</h3>
+          <p data-i18n="desc_finance_spotlight">MA TradeLab v2.3.0 bridges the gap between daily trading profits and overall financial health. Track bank accounts, crypto wallets, and trading broker balances with strict double-entry transfer integrity. Monitor recurring platform subscriptions (TradingView, Bookmap, CME data), courses, hardware upgrades, and compute live Net Worth and Debt-to-Asset ratios.</p>
+          <ul class="card-features">
+            <li data-i18n="finance_point_1">Double-entry internal transfers prevent distortion of trading P&L</li>
+            <li data-i18n="finance_point_2">Subscription Sentinel with color-coded renewal alerts (1-30 days)</li>
+            <li data-i18n="finance_point_3">5 native vector charts for cash flow, net worth, and savings goals</li>
+          </ul>
+        </div>
+        <div class="spotlight-visual">
+          <div style="background:var(--bg-input); border:1px solid var(--border); border-radius:8px; padding:18px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:1px solid var(--border); padding-bottom:10px;">
+              <div>
+                <span style="font-size:0.75rem; color:var(--text-secondary); text-transform:uppercase;">Estimated Net Worth</span>
+                <div style="font-size:1.6rem; font-weight:900; color:var(--gold-light);">$184,520.00</div>
+              </div>
+              <span class="badge-pass">+18.4% YTD Growth</span>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px;">
+              <div style="background:var(--bg-card); padding:10px; border-radius:6px; border:1px solid var(--border);">
+                <div style="font-size:0.72rem; color:var(--text-muted);">🏦 Banking & Liquid Cash</div>
+                <div style="font-weight:700; color:var(--text);">$68,200.00</div>
+              </div>
+              <div style="background:var(--bg-card); padding:10px; border-radius:6px; border:1px solid var(--border);">
+                <div style="font-size:0.72rem; color:var(--text-muted);">📈 Trading Broker Capital</div>
+                <div style="font-weight:700; color:var(--gold-light);">$95,500.00</div>
+              </div>
+            </div>
+            <div style="font-size:0.75rem; color:var(--text-secondary); margin-bottom:8px; font-weight:700;">Active Trading Subscriptions:</div>
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; background:var(--bg-card); padding:8px 10px; border-radius:6px; font-size:0.8rem;">
+                <span>TradingView Premium ($59.95/mo)</span>
+                <span class="badge-pass">Active (Renews in 18d)</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; background:var(--bg-card); padding:8px 10px; border-radius:6px; font-size:0.8rem;">
+                <span>CME Level 2 Depth of Market ($42.00/mo)</span>
+                <span class="badge-due">Due in 3 Days</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Dive 4: Economic Calendar & Studio Audio Alerts -->
+  <section id="calendar">
+    <div class="container">
+      <div class="spotlight reverse">
+        <div class="spotlight-info">
+          <span class="section-tag" data-i18n="tag_calendar_spotlight">Macro Risk Sentinel & Audio Engine</span>
+          <h3 data-i18n="title_calendar_spotlight">Studio Voice Alerts & Gregorian Heatmaps Before Every Session</h3>
+          <p data-i18n="desc_calendar_spotlight">Never get caught off-guard by high-impact macro data. MA TradeLab combines an interactive Gregorian trading calendar heatmap with an integrated macroeconomic news feed featuring studio-recorded human voice countdown announcements (15m, 5m, 1m) and second-of-release alerts in both Arabic and English.</p>
+          <ul class="card-features">
+            <li data-i18n="calendar_point_1">Real human voice countdowns in dual Arabic & English tracks</li>
+            <li data-i18n="calendar_point_2">Real-time macro feed tracking CPI, NFP, FOMC, PPI, GDP</li>
+            <li data-i18n="calendar_point_3">Gregorian monthly P&L heatmaps with 1-click journal inspection</li>
+          </ul>
+        </div>
+        <div class="spotlight-visual">
+          <div style="background:var(--bg-input); border:1px solid var(--border); border-radius:8px; padding:18px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <span style="font-weight:700; font-size:0.9rem; color:var(--text);">Macroeconomic Radar (Today)</span>
+              <span class="badge-audio">🎙️ Voice Sentinel: Armed</span>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="background:var(--bg-card); border:1px solid rgba(239,68,68,0.3); border-radius:6px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    <span style="color:var(--crimson); font-weight:800; font-size:0.8rem;">🔴 HIGH</span>
+                    <strong style="font-size:0.85rem;">US Core CPI (MoM)</strong>
+                  </div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); margin-top:2px;">Consensus: 0.3% | Prev: 0.3%</div>
+                </div>
+                <div style="text-align:right;">
+                  <span class="badge-due">Countdown: 00:04:12</span>
+                  <div style="font-size:0.7rem; color:var(--gold-light); margin-top:3px;">🔊 5m Warning Announced</div>
+                </div>
+              </div>
+
+              <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:6px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center;">
+                <div>
+                  <div style="display:flex; align-items:center; gap:6px;">
+                    <span style="color:var(--crimson); font-weight:800; font-size:0.8rem;">🔴 HIGH</span>
+                    <strong style="font-size:0.85rem;">FOMC Interest Rate Decision</strong>
+                  </div>
+                  <div style="font-size:0.75rem; color:var(--text-muted); margin-top:2px;">Consensus: 5.25% | Prev: 5.50%</div>
+                </div>
+                <div style="text-align:right;">
+                  <span class="badge-req">14:00 EST</span>
+                  <div style="font-size:0.7rem; color:var(--text-muted); margin-top:3px;">15m / 5m / 1m Armed</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Technical Architecture & Specifications -->
   <section id="architecture" style="background: var(--bg-card);">
     <div class="container">
@@ -1076,21 +1253,29 @@
       <div class="download-section">
         <span class="section-tag" data-i18n="tag_download">Official Release</span>
         <h2 style="font-size:2.2rem; font-weight:800; margin-bottom:12px;" data-i18n="title_download">Download MA TradeLab for Windows</h2>
-        <p style="color:var(--text-secondary); max-width:620px; margin:0 auto;" data-i18n="sub_download">
-          Self-contained standalone executable for 64-bit Windows. No installer or .NET framework pre-installation required. Just download and run.
+        <p style="color:var(--text-secondary); max-width:640px; margin:0 auto;" data-i18n="sub_download">
+          Self-contained standalone package for 64-bit Windows. No installer or .NET framework pre-installation required. Choose your preferred format below.
         </p>
 
         <div class="download-details">
-          <span>📦 <strong>MA TradeLab.exe</strong></span>
+          <span>📦 <strong>MA TradeLab</strong></span>
           <span>💾 <strong>v2.3.0 (Win-x64)</strong></span>
-          <span>📁 <strong>Standalone (~260 MB) / Portable (~93 MB)</strong></span>
+          <span>📁 <strong>Standalone (~249 MB) / Portable (~93 MB)</strong></span>
           <span>💻 <strong>Windows 10 / 11 (64-bit)</strong></span>
         </div>
 
-        <a href="https://github.com/m4whw/MATradelab/releases/download/v2.3.0/MATradeLab_Setup.exe" class="btn btn-gold btn-lg" style="box-shadow:0 8px 30px rgba(245,158,11,0.35);" data-i18n="btn_download_release">
-          ⬇️ Download MA TradeLab v2.3.0 Setup (.exe)
-        </a>
-        <div style="margin-top:16px; font-size:0.8rem; color:var(--text-muted);" data-i18n="download_note">
+        <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin-top:24px;">
+          <a href="https://github.com/m4whw/MATradelab/releases/download/v2.3.0/MATradeLab_Setup.exe" class="btn btn-gold btn-lg" style="box-shadow:0 8px 30px rgba(245,158,11,0.35);" data-i18n="btn_download_setup">
+            ⬇️ Download Setup (.exe) ~249 MB
+          </a>
+          <a href="https://github.com/m4whw/MATradelab/releases/download/v2.3.0/MA.TradeLab.exe" class="btn btn-outline btn-lg" data-i18n="btn_download_standalone">
+            💾 Standalone (.exe) ~249 MB
+          </a>
+          <a href="https://github.com/m4whw/MATradelab/releases/download/v2.3.0/MA_TradeLab_v2.3.0_Portable.zip" class="btn btn-outline btn-lg" data-i18n="btn_download_portable">
+            📦 Portable (.zip) ~93 MB
+          </a>
+        </div>
+        <div style="margin-top:20px; font-size:0.82rem; color:var(--text-muted);" data-i18n="download_note">
           100% Free of adware, telemetry, or cloud dependencies. Runs entirely offline.
         </div>
       </div>
@@ -1128,6 +1313,7 @@
         </div>
         <div class="footer-links">
           <a href="#capabilities" data-i18n="nav_capabilities">Capabilities</a>
+          <a href="#finance" data-i18n="nav_finance">Finance</a>
           <a href="#download" data-i18n="nav_download">Download</a>
           <a href="https://mohamed-abdelaziz.com" target="_blank" rel="noopener">Author Website</a>
           <a href="https://github.com/m4whw" target="_blank" rel="noopener">GitHub</a>
@@ -1135,6 +1321,7 @@
       </div>
     </div>
   </footer>
+
   <!-- Bilingual Language Script (English / Arabic) -->
   <script>
     const translations = {
@@ -1142,13 +1329,14 @@
         nav_capabilities: "Capabilities",
         nav_engine: "Decision Engine",
         nav_prop: "Prop Analytics",
-        nav_calendar: "Calendar",
+        nav_finance: "Financial Management",
+        nav_calendar: "Calendar & Audio",
         nav_architecture: "Architecture",
         nav_developer: "Developer",
         nav_download: "Download",
-        hero_badge: "Professional Desktop Trading Journal & Strategy Analytics",
-        hero_title: "Master Your Edge. <br><span class=\"gold-text\">Validate Before You Execute.</span>",
-        hero_lead: "A local-first, privacy-driven desktop workstation designed for systematic futures & forex traders and prop firm evaluations. Rule-based pre-trade checklist scoring, loss limit guardrails, Gregorian calendar tracking, and immutable journal audits.",
+        hero_badge: "Professional Desktop Trading Journal, Prop Engine & Financial Management",
+        hero_title: "Master Your Edge. <br><span class="gold-text">Validate Before You Execute.</span>",
+        hero_lead: "A local-first, privacy-driven desktop workstation designed for systematic futures & forex traders, prop firm challenges, and personal financial management. Rule-based pre-trade checklist scoring, loss limit guardrails, studio voice news alerts, and comprehensive double-entry net worth tracking.",
         hero_cta_download: "⚡ Download for Windows x64",
         hero_cta_explore: "Explore Capabilities ↓",
         meta_privacy: "100% Local-First & Zero Telemetry",
@@ -1169,7 +1357,7 @@
         leg_maxloss: "Max Loss Level ($90k)",
         tag_capabilities: "Comprehensive Feature Matrix",
         title_capabilities: "Built for Discipline, Precision & Systematic Edge",
-        sub_capabilities: "Everything serious futures and forex traders need to systematically audit, execute, and scale their trading business.",
+        sub_capabilities: "Everything serious futures, forex, and prop traders need to systematically validate setups, protect capital, track net worth, and scale their trading business.",
         feat_strat_title: "Strategy Rule Engine",
         feat_strat_desc: "Design custom quantitative trading models with weighted checklist rules, mandatory requirements, and customizable minimum score thresholds.",
         feat_strat_1: "Weighted condition hierarchy (0-100%)",
@@ -1180,21 +1368,36 @@
         feat_pre_1: "Futures (NQ, ES, GC, CL) & Forex",
         feat_pre_2: "Automatic R:R and dollar risk sizing",
         feat_pre_3: "EXECUTE / DO NOT EXECUTE gating",
-        feat_prop_title: "Prop Account Performance",
-        feat_prop_desc: "Dedicated challenge dashboard with independent tracking for Topstep, Apex, FTMO, and custom broker accounts with strict guardrails.",
+        feat_prop_title: "Prop Firm Intelligence (PFIE)",
+        feat_prop_desc: "Dedicated challenge dashboard with pre-configured rules for 50+ prop firms (Topstep, Apex, Tradeify, FTMO) with automated guardrails.",
         feat_prop_1: "Daily loss buffer monitoring",
         feat_prop_2: "Trailing maximum drawdown tracking",
         feat_prop_3: "Profit target & trading days progression",
-        feat_cal_title: "Gregorian Trading Calendar",
-        feat_cal_desc: "Interactive monthly performance heatmaps, weekly aggregation metrics, win/loss day tallies, and single-click drill-down to daily trades in the journal.",
-        feat_cal_1: "Strict Gregorian calendar in EN & AR",
-        feat_cal_2: "Daily P&L and total R multiples",
-        feat_cal_3: "Direct journal day inspection",
+        feat_finance_title: "Personal & Trading Finance",
+        feat_finance_desc: "Track bank accounts, broker capital, crypto, and cash. Monitor trading subscriptions, data feeds, and hardware with live Net Worth analytics.",
+        feat_finance_1: "Double-entry multi-account ledger",
+        feat_finance_2: "Trading expense & subscription sentinel",
+        feat_finance_3: "Live Net Worth & 5 native vector charts",
+        feat_econ_title: "Economic Calendar & Studio Audio",
+        feat_econ_desc: "Live macroeconomic news tracking (CPI, NFP, FOMC) with studio-recorded human voice countdown announcements (15m, 5m, 1m).",
+        feat_econ_1: "Studio human voice countdowns in EN & AR",
+        feat_econ_2: "Second-of-release slippage warning chime",
+        feat_econ_3: "Event-specific filtering and volume controls",
+        feat_connectors_title: "Direct Platform Connectors",
+        feat_connectors_desc: "Zero-latency Localhost IPC integration with MetaTrader 5, NinjaTrader 8, and ATAS for instantaneous automatic trade logging.",
+        feat_connectors_1: "MetaTrader 5 MQL5 EA on port 18082",
+        feat_connectors_2: "NinjaTrader 8 C# Add-on on port 18080",
+        feat_connectors_3: "ATAS Order-Flow Connector on port 18081",
         feat_analytics_title: "Deep Edge Analytics",
         feat_analytics_desc: "Calculate mathematical expectancy, profit factor, R-multiple distributions, score-bracket performance, and rule impact delta analysis.",
         feat_analytics_1: "Expectancy & Profit Factor formulas",
         feat_analytics_2: "Condition impact edge analysis",
         feat_analytics_3: "Cumulative equity curve progression",
+        feat_cal_title: "Gregorian Trading Calendar",
+        feat_cal_desc: "Interactive monthly performance heatmaps, weekly aggregation metrics, win/loss day tallies, and single-click drill-down to daily trades in the journal.",
+        feat_cal_1: "Strict Gregorian calendar in EN & AR",
+        feat_cal_2: "Daily P&L and total R multiples",
+        feat_cal_3: "Direct journal day inspection",
         feat_privacy_title: "100% Local-First Privacy",
         feat_privacy_desc: "All journal records, strategy rules, screenshots, and account balances remain on your local machine in an encrypted SQLite database.",
         feat_privacy_1: "Zero cloud tracking or third-party servers",
@@ -1212,6 +1415,18 @@
         prop_point_1: "Strict database-level AccountId filtering — zero trade leakage",
         prop_point_2: "Dynamic daily loss limit buffer & trailing drawdown watermark",
         prop_point_3: "Global header & dashboard account selectors synchronized in real-time",
+        tag_finance_spotlight: "Personal & Trading Finance (v2.3.0)",
+        title_finance_spotlight: "Complete Financial Clarity: From Market P&L to True Net Worth",
+        desc_finance_spotlight: "MA TradeLab v2.3.0 bridges the gap between daily trading profits and overall financial health. Track bank accounts, crypto wallets, and trading broker balances with strict double-entry transfer integrity. Monitor recurring platform subscriptions (TradingView, Bookmap, CME data), courses, hardware upgrades, and compute live Net Worth and Debt-to-Asset ratios.",
+        finance_point_1: "Double-entry internal transfers prevent distortion of trading P&L",
+        finance_point_2: "Subscription Sentinel with color-coded renewal alerts (1-30 days)",
+        finance_point_3: "5 native vector charts for cash flow, net worth, and savings goals",
+        tag_calendar_spotlight: "Macro Risk Sentinel & Audio Engine",
+        title_calendar_spotlight: "Studio Voice Alerts & Gregorian Heatmaps Before Every Session",
+        desc_calendar_spotlight: "Never get caught off-guard by high-impact macro data. MA TradeLab combines an interactive Gregorian trading calendar heatmap with an integrated macroeconomic news feed featuring studio-recorded human voice countdown announcements (15m, 5m, 1m) and second-of-release alerts in both Arabic and English.",
+        calendar_point_1: "Real human voice countdowns in dual Arabic & English tracks",
+        calendar_point_2: "Real-time macro feed tracking CPI, NFP, FOMC, PPI, GDP",
+        calendar_point_3: "Gregorian monthly P&L heatmaps with 1-click journal inspection",
         tag_tech: "Engineering & Architecture",
         title_tech: "Built on Modern Native Windows Technologies",
         sub_tech: "Engineered with Clean Architecture and zero third-party cloud dependencies for instantaneous desktop performance.",
@@ -1221,24 +1436,27 @@
         spec_security: "Windows Native Data Protection",
         tag_download: "Official Release",
         title_download: "Download MA TradeLab for Windows",
-        sub_download: "Self-contained standalone executable for 64-bit Windows. No installer or .NET framework pre-installation required. Just download and run.",
-        btn_download_release: "⬇️ Download MA TradeLab v2.3.0 Setup (.exe)",
+        sub_download: "Self-contained standalone package for 64-bit Windows. No installer or .NET framework pre-installation required. Choose your preferred format below.",
+        btn_download_setup: "⬇️ Download Setup (.exe) ~249 MB",
+        btn_download_standalone: "💾 Standalone (.exe) ~249 MB",
+        btn_download_portable: "📦 Portable (.zip) ~93 MB",
         download_note: "100% Free of adware, telemetry, or cloud dependencies. Runs entirely offline.",
         dev_title: "Software Engineer & Quantitative Systematic Trader",
         dev_bio: "Creator of MA TradeLab and proprietary trading software solutions. Dedicated to building robust, privacy-first desktop tools that bridge the gap between quantitative strategy validation, risk management, and flawless market execution.",
         footer_rights: "Professional Trading Journal & Strategy Analytics."
       },
       ar: {
-        nav_capabilities: "الميزات",
+        nav_capabilities: "الميزات والقدرات",
         nav_engine: "محرك القرار",
         nav_prop: "حسابات التمويل",
-        nav_calendar: "التقويم",
+        nav_finance: "الإدارة المالية",
+        nav_calendar: "التقويم والتنبيهات",
         nav_architecture: "البنية البرمجية",
         nav_developer: "المطور",
         nav_download: "التحميل",
-        hero_badge: "سجل تداول احترافي ومحرك تقييم الاستراتيجيات لسطح المكتب",
-        hero_title: "أحكم سيطرتك على ميزتك التنافسية. <br><span class=\"gold-text\">قيّم بدقة قبل التنفيذ في السوق.</span>",
-        hero_lead: "محطة عمل مكتبية مستقلة ومحلية بالكامل، صُممت خصيصاً لمتداولي العقود الآجلة والفوركس واجتياز اختبارات شركات التمويل. تقييم دقيق لقواعد الاستراتيجية، وحماية من تجاوز حدود الخسارة، وتقويم ميلادي تفاعلي، وتوثيق غير قابل للتعديل.",
+        hero_badge: "سجل تداول احترافي، محرك شركات التمويل، والمحطة المالية المتكاملة للمتداول",
+        hero_title: "أحكم سيطرتك على ميزتك التنافسية. <br><span class="gold-text">قيّم بدقة قبل التنفيذ في السوق.</span>",
+        hero_lead: "محطة عمل مكتبية مستقلة ومحلية بالكامل، صُممت خصيصاً لمتداولي العقود الآجلة والفوركس واجتياز تحديات شركات التمويل مع إدارة مالية شخصية ومالية تداول شاملة. تقييم دقيق لشروط الاستراتيجية، وحماية من تجاوز حدود الخسارة، وتنبيهات صوتية استوديو، وتتبع دقيق لصافي الثروة بدفتر قيود مزدوج.",
         hero_cta_download: "⚡ تحميل لويندوز (Windows x64)",
         hero_cta_explore: "استكشف القدرات والميزات ↓",
         meta_privacy: "محلية 100% وبدون أي تتبع سحابي",
@@ -1259,7 +1477,7 @@
         leg_maxloss: "حد الخسارة الأقصى ($90k)",
         tag_capabilities: "مصفوفة الميزات والقدرات",
         title_capabilities: "صُمم لترسيخ الانضباط والدقة والمنهجية العلمية",
-        sub_capabilities: "كل ما يحتاجه متداولو العقود الآجلة والفوركس لتوثيق صفقاتهم واختبار استراتيجياتهم وتوسيع نطاق أعمالهم بثقة.",
+        sub_capabilities: "كل ما يحتاجه متداولو العقود الآجلة والفوركس وشركات التمويل لتقييم صفقاتهم، وحماية رؤوس أموالهم، وتتبع صافي ثروتهم وتوسيع أعمالهم بثقة.",
         feat_strat_title: "محرك بناء الاستراتيجيات",
         feat_strat_desc: "صمم نماذجك الكمية بقوائم تدقيق مرجحة، وشروط إلزامية لا تقبل التجاوز، وحد أدنى مخصص للدرجات المطلوبة.",
         feat_strat_1: "هيكل مرجح للأوزان (0-100%)",
@@ -1270,21 +1488,36 @@
         feat_pre_1: "العقود الآجلة (NQ, ES, GC) والفوركس",
         feat_pre_2: "حساب آلي للعائد مقابل المخاطرة R:R",
         feat_pre_3: "توصية واضحة: نفّذ / لا تنفّذ",
-        feat_prop_title: "أداء حسابات التمويل (Prop)",
-        feat_prop_desc: "لوحة تحكم مخصصة لكل حساب تمويل (Topstep, Apex, FTMO) بشكل مستقل تماماً مع رصد مستمر لحدود الأمان.",
+        feat_prop_title: "ذكاء شركات التمويل (PFIE)",
+        feat_prop_desc: "لوحة تحكم مخصصة مجهزة مسبقاً لأكثر من 50 شركة تمويل (Topstep, Apex, Tradeify, FTMO) مع حواجز أمان آلية.",
         feat_prop_1: "رصد هامش الأمان اليومي المتبقي",
         feat_prop_2: "تتبع التراجع الأقصى والمتحرك بدقة",
         feat_prop_3: "تتبع أيام التداول والهدف الربحي",
-        feat_cal_title: "تقويم تداول ميلادي تفاعلي",
-        feat_cal_desc: "عرض أداء الصفقات عبر خريطة حرارية شهرية ميلادية، وملخص أسبوعي، وتوزيع لأيام الربح والخسارة، مع فحص مباشر للصفقات.",
-        feat_cal_1: "تقويم ميلادي دقيق بالعربية والإنجليزية",
-        feat_cal_2: "عرض P&L اليومي ومضاعفات R",
-        feat_cal_3: "انتقال بنقرة واحدة لصفقات اليوم بالدفتر",
+        feat_finance_title: "الإدارة المالية للتداول والشخصية",
+        feat_finance_desc: "تتبع الحسابات البنكية، وأرصدة وسطاء التداول، والعملات المشفرة، والكاش. رصد اشتراكات المنصات وتكاليف البيانات وحساب صافي الثروة.",
+        feat_finance_1: "دفتر قيود مزدوج متعدد الحسابات",
+        feat_finance_2: "رصد اشتراكات وتكاليف التداول وتنبيهات التجديد",
+        feat_finance_3: "حساب صافي الثروة و5 رسوم بيانية تفاعلية",
+        feat_econ_title: "المفكرة الاقتصادية والتنبيهات الصوتية",
+        feat_econ_desc: "رصد حي للأخبار الاقتصادية الكبرى (CPI, NFP, FOMC) مع تنبيهات صوتية مسجلة باستوديو احترافي للعد التنازلي (15د، 5د، 1د).",
+        feat_econ_1: "أصوات استوديو بشرية للعد التنازلي بالعربية والإنجليزية",
+        feat_econ_2: "جرس تنبيه عند ثانية الصدور لتفادي الانزلاق السعري",
+        feat_econ_3: "تحكم كامل وتخصيص لكل حدث ومستوى الصوت",
+        feat_connectors_title: "الربط المباشر مع منصات التداول",
+        feat_connectors_desc: "ربط مباشر فائق السرعة عبر Localhost مع MT5 و NinjaTrader 8 و ATAS لمزامنة الصفقات تلقائياً بنقرة واحدة.",
+        feat_connectors_1: "إكسبيرت MT5 MQL5 على منفذ 18082",
+        feat_connectors_2: "إضافة NinjaTrader 8 الأصلية على منفذ 18080",
+        feat_connectors_3: "موصل منصة ATAS لتدفق الأوامر على منفذ 18081",
         feat_analytics_title: "تحليلات الأداء المتقدمة",
         feat_analytics_desc: "حساب التوقع الرياضي (Expectancy)، وعامل الربح (Profit Factor)، وتوزيع مضاعفات R، وتأثير كل شرط على الميزة التنافسية.",
         feat_analytics_1: "معادلات Expectancy و Profit Factor الدقيقة",
         feat_analytics_2: "تحليل تأثير الشروط على نسبة النجاح",
         feat_analytics_3: "منحنى نمو تراكمي لحقوق الملكية",
+        feat_cal_title: "تقويم تداول ميلادي تفاعلي",
+        feat_cal_desc: "عرض أداء الصفقات عبر خريطة حرارية شهرية ميلادية، وملخص أسبوعي، وتوزيع لأيام الربح والخسارة، مع فحص مباشر للصفقات.",
+        feat_cal_1: "تقويم ميلادي دقيق بالعربية والإنجليزية",
+        feat_cal_2: "عرض P&L اليومي ومضاعفات R",
+        feat_cal_3: "انتقال بنقرة واحدة لصفقات اليوم بالدفتر",
         feat_privacy_title: "خصوصية محلية 100%",
         feat_privacy_desc: "جميع بيانات التداول واستراتيجياتك وصور الشارتات تُحفظ محلياً على جهازك في قاعدة بيانات SQLite مشفرة.",
         feat_privacy_1: "صفر تتبع سحابي أو خوادم خارجية",
@@ -1302,6 +1535,18 @@
         prop_point_1: "فلترة صارمة على مستوى قاعدة البيانات بـ AccountId لمنع التسرب",
         prop_point_2: "رصد فوري لهامش الخسارة اليومي والتراجع المتحرك",
         prop_point_3: "تزامن فوري بين محدد الحساب في الرأس ولوحة التحكم",
+        tag_finance_spotlight: "الإدارة المالية للتداول والشخصية (v2.3.0)",
+        title_finance_spotlight: "وضوح مالي شامل: من أرباح السوق إلى صافي الثروة الحقيقية",
+        desc_finance_spotlight: "يقدم MA TradeLab v2.3.0 منظومة مالية متكاملة تربط بين أرباح التداول اليومية والنمو المالي الحقيقي للمتداول. تتبع حساباتك البنكية ومحافظ الكريبتو وحسابات التداول بدفتر قيود مزدوج يمنع تشويه الأرباح. راقب اشتراكاتك المتكررة (TradingView, Bookmap, بيانات CME) والأجهزة والدورات مع حساب حي لصافي الثروة ونسبة الديون للأصول.",
+        finance_point_1: "تحويلات داخلية لا تحتسب كإيراد أو مصروف لضمان دقة الأرقام",
+        finance_point_2: "رصد للاشتراكات وتنبيهات ملونة قبل موعد التجديد (1-30 يوماً)",
+        finance_point_3: "5 رسوم بيانية تفاعلية للتدفق النقدي وصافي الثروة وأهداف الادخار",
+        tag_calendar_spotlight: "حارس المخاطر الاقتصادية والمحرك الصوتي",
+        title_calendar_spotlight: "تنبيهات صوتية استوديو وخريطة حرارية ميلادية قبل كل جلسة",
+        desc_calendar_spotlight: "لا تدع الأخبار الاقتصادية العنيفة تفاجئ صفقاتك المفتوحة. يجمع MA TradeLab بين تقويم ميلادي تفاعلي لعرض الأداء وخريطة حرارية، مع تغذية حية للأخبار الاقتصادية الكبرى وتنبيهات صوتية مسجلة باستوديو احترافي للعد التنازلي قبل الصدور بـ 15 و 5 ودقيقة واحدة باللغتين العربية والإنجليزية.",
+        calendar_point_1: "تسجيلات صوتية استوديو بشرية للعد التنازلي بالعربية والإنجليزية",
+        calendar_point_2: "متابعة حية وفورية لبيانات التضخم CPI والوظائف NFP وقرارات الفائدة FOMC",
+        calendar_point_3: "خريطة حرارية شهرية ميلادية مع انتقال بنقرة واحدة لصفقات اليوم",
         tag_tech: "الهندسة والبنية البرمجية",
         title_tech: "مبني على أحدث تقنيات ويندوز الأصلية",
         sub_tech: "مطور وفق معمارية Clean Architecture وبدون أي اعتمادات سحابية لتوفير أداء فائق السرعة والاستجابة.",
@@ -1311,8 +1556,10 @@
         spec_security: "حماية بيانات Windows DPAPI الأصلية",
         tag_download: "الإصدار الرسمي",
         title_download: "تحميل برنامج MA TradeLab لويندوز",
-        sub_download: "ملف تنفيذي مستقل ومدمج بالكامل لنظام Windows 64-bit. لا يتطلب أي برامج تثبيت أو تثبيت مسبق لإطار .NET. حمّل وشغّل مباشرة.",
-        btn_download_release: "⬇️ تحميل مثبت MA TradeLab v2.3.0 Setup (.exe)",
+        sub_download: "حزم برمجية مستقلة ومدمجة بالكامل لنظام Windows 64-bit. لا تتطلب أي تثبيت مسبق لإطار .NET. اختر الحزمة المناسبة لك أدناه.",
+        btn_download_setup: "⬇️ تحميل مثبت البرنامج (.exe) ~249 MB",
+        btn_download_standalone: "💾 نسخة مباشرة بدون تثبيت (.exe) ~249 MB",
+        btn_download_portable: "📦 نسخة محمولة مضغوطة (.zip) ~93 MB",
         download_note: "خالٍ 100% من الإعلانات أو التتبع أو الاتصال بالسحابة. يعمل محلياً بالكامل.",
         dev_title: "مهندس برمجيات ومتداول كمي منهجي",
         dev_bio: "مبتكر MA TradeLab وحلول البرمجيات المالية المتقدمة. متخصص في تطوير برمجيات مكتبية عالية الأمان والأداء لسد الفجوة بين التحليل الكمي، وإدارة المخاطر، والانضباط التنفيذي.",
