@@ -53,7 +53,14 @@
 - **Local & Cloud AI**: 100% offline privacy via **Ollama** (Local LLMs) and cloud integrations (**OpenAI ChatGPT, Google Gemini, Anthropic Claude**).
 - **Weighted Strategy Checklist**: Build custom weighted entry rules and psychological discipline checklists.
 
-### 7. 🔒 Military-Grade Privacy & Encryption (الخصوصية والأمان الفائق)
+### 7. 💰 Personal & Trading Financial Management (الإدارة المالية الشاملة للتداول والشخصية)
+- **Multi-Account & Cash-Flow Tracking**: Track Bank accounts, Cash, Crypto, and Broker balances with strict accounting integrity.
+- **Trading Costs & Subscriptions**: Track trading-related expenses, platform licenses, market data, prop firm fees, education, and hardware upgrades.
+- **Subscription Expiry & Due Date Alerts**: Configurable countdown reminders and status badges for upcoming renewals.
+- **Assets & Liabilities Ledger**: Real-time Net Worth calculation, Debt-to-Asset ratio, and Savings rate progression.
+- **Executive Analytics & Native Vector Charts**: 5 high-performance vector charts for Monthly Cash Flow, Net Worth Trajectory, Expense Allocation, and Savings Progress.
+
+### 8. 🔒 Military-Grade Privacy & Encryption (الخصوصية والأمان الفائق)
 - **Zero Data Leakage**: All trade logs, account balances, and notes remain stored locally in an encrypted SQLite database.
 - **Windows DPAPI**: Hardware-level encryption for AI API credentials.
 
