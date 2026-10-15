@@ -1,9 +1,9 @@
 <div align="center">
 
-# 📊 MA TradeLab (v2.3.0)
+# 📊 MA TradeLab (v2.5.2)
 
-[![Release](https://img.shields.io/badge/Release-v2.3.0-gold?style=for-the-badge&logo=github&logoColor=white)](https://github.com/m4whw/MATradelab/releases/tag/v2.3.0)
-[![Platform](https://img.shields.io/badge/Platform-Windows_10%2B_%7C_64--bit-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/m4whw/MATradelab/releases/tag/v2.3.0)
+[![Release](https://img.shields.io/badge/Release-v2.5.2-gold?style=for-the-badge&logo=github&logoColor=white)](https://github.com/m4whw/MATradelab/releases/tag/v2.5.2)
+[![Platform](https://img.shields.io/badge/Platform-Windows_10%2B_%7C_64--bit-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/m4whw/MATradelab/releases/tag/v2.5.2)
 [![Framework](https://img.shields.io/badge/.NET-8.0_WPF-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 [![Security](https://img.shields.io/badge/Privacy-100%25_Offline_Local_Storage-2ea44f?style=for-the-badge&logo=sqlite&logoColor=white)](#-security--data-privacy)
 
@@ -22,7 +22,7 @@
   - [1. Smart Trading Journal & Statistical Analytics](#1-smart-trading-journal--statistical-analytics)
   - [2. Prop Firm Intelligence Engine (PFIE)](#2-prop-firm-intelligence-engine-pfie)
   - [3. Pre-Trade Decision Engine & Risk Management](#3-pre-trade-decision-engine--risk-management)
-  - [4. Personal & Trading Financial Management (v2.3.0)](#4-personal--trading-financial-management-v230)
+  - [4. Personal & Trading Financial Management](#4-personal--trading-financial-management)
   - [5. Economic Calendar & Studio Audio Alerts](#5-economic-calendar--studio-audio-alerts)
   - [6. Direct Platform Connectors (MT5, NinjaTrader 8, ATAS)](#6-direct-platform-connectors)
   - [7. DeepCharts & MenthorQ Gamma Converter](#7-deepcharts--menthorq-gamma-converter)
@@ -30,7 +30,6 @@
 - [🛠️ Technical Specifications](#️-technical-specifications)
 - [📦 Download & Installation](#-download--installation)
 - [🔒 Security & Data Privacy](#-security--data-privacy)
-- [📝 Release History](#-release-history)
 - [👨‍💻 Author & Developer](#-author--developer)
 
 ---
@@ -49,9 +48,9 @@ It unifies an **advanced trade journaling engine**, a **real-time prop complianc
 - **Multi-Asset Trade Journaling**: Log trades across CME/NYMEX Futures (NQ, ES, YM, RTY, GC, CL), Spot Forex, and Equities with contract sizing, exact tick calculations, commissions, and gross/net realized P&L.
 - **Advanced Mathematical Performance Metrics**:
   - **Expectancy & Expectancy Ratio**: Calculate the true statistical edge per dollar risked.
-  - **Win Rate, Profit Factor, & Sharpe Ratio**: Real-time evaluation of execution quality.
-  - **Average Win / Loss & Maximum Favorable Excursion (MFE) / Maximum Adverse Excursion (MAE)**.
-  - **Consecutive Wins / Losses & Drawdown Duration Tracker**.
+  - **Win Rate & Profit Factor**: Real-time evaluation of execution quality.
+  - **Average Win / Loss and R-multiple tracking**.
+  - **Consecutive Wins / Losses Tracker**.
 - **Visual Trade Archiving**: Attach before & after multi-timeframe chart screenshots, entry trigger reasoning, trade behavioral ratings, and emotional discipline notes.
 - **Multi-Dimensional Filtering**: Instantly filter trades by Account, Trading Strategy, Session (New York AM/PM, London, Asia), Symbol, Direction (Long/Short), and Custom Date Ranges.
 
@@ -70,7 +69,7 @@ It unifies an **advanced trade journaling engine**, a **real-time prop complianc
 - **Automated Contract Sizing & Dollar Risk Calculation**: Enter your stop-loss in points/pips/ticks and account risk percentage; the engine calculates the exact number of contracts/lots to risk.
 - **Strict Execution Verdict**: Clear deterministic recommendation (**EXECUTE** or **DO NOT EXECUTE**) based on meeting the minimum required strategy score.
 
-### 4. Personal & Trading Financial Management (v2.3.0)
+### 4. Personal & Trading Financial Management
 - **Multi-Account Ledger**: Track Bank Accounts, Physical Cash Reserves, Broker Capital, and Crypto Wallets with full balance synchronization.
 - **Strict Double-Entry Accounting Integrity**: Internal transfers between accounts (e.g. Bank to Broker) are isolated and never falsely categorized as income or expenses.
 - **Dedicated Trading Cost & Subscription Tracker**:
@@ -91,12 +90,13 @@ It unifies an **advanced trade journaling engine**, a **real-time prop complianc
 - **High-Fidelity Studio Human Voice Alerts**:
   - Real human voice countdown reminders: 15 minutes, 5 minutes, 1 minute before high-impact news releases.
   - Second-of-release warning chime to protect open trades from extreme slippage and volatility spikes.
-  - Actual outcome notifications (Higher / Lower / In-Line with consensus).
+  - Actual outcome notifications when the actual figure is published by the feed.
+- **T1 News Calendar & Pre-Trade News Gate**: Official BLS, Federal Reserve and EIA release dates shown in New York and Brussels time; the Pre-Trade engine blocks new entries inside the high-impact window (±2 min prop rule plus a ±5 min safety buffer).
 - **Customizable Audio & Language Controls**: Bilingual Arabic & English studio voices with individual event toggles, volume sliders, and sound testing.
 
 ### 6. Direct Platform Connectors
 - **Localhost Zero-Latency IPC**: Connects directly to desktop trading platforms without cloud intermediaries:
-  - **MetaTrader 5 (MT5)**: MQL5 Expert Advisor (`MATradeLabConnector.mq5`) listening on port 18082 for instant 1-click execution sync.
+  - **MetaTrader 5 (MT5)**: MQL5 Expert Advisor (`MATradeLabConnector.mq5`) listening on port 18082 for instant trade sync.
   - **NinjaTrader 8 (NT8)**: Native C# add-on on port 18080 for live futures trade journaling.
   - **ATAS Platform**: Integrated strategy connector (`MATradeLabAtasConnector.cs`) on port 18081 for order-flow trade logging.
 
@@ -114,12 +114,12 @@ It unifies an **advanced trade journaling engine**, a **real-time prop complianc
 | Specification | Technical Details |
 |---|---|
 | **Software Name** | **MA TradeLab** |
-| **Version** | **v2.3.0 (Official Stable Release)** |
+| **Version** | **v2.5.2 (Official Stable Release)** |
 | **Target OS** | Windows 10 / Windows 11 (64-bit Architecture) |
 | **Runtime** | .NET 8.0 Desktop Runtime (Self-Contained / Mapped x64) |
 | **Language & Architecture** | C# 12 / WPF with MVVM Clean Architecture |
 | **Database Engine** | Embedded SQLite with EF Core & ACID Compliant Transactions |
-| **Packaging** | Standalone Single-File Setup (~249 MB) & Portable ZIP (~93 MB) |
+| **Packaging** | Setup Installer (~164 MB) & Portable ZIP (~93 MB), SHA-256 checksums on the release page |
 | **User Interface** | Dual Native Interface (English and Arabic with dynamic RTL/LTR switch) |
 | **Visual Theme** | High-Contrast Dark Gold Cyberpunk Workstation |
 | **Data Privacy** | **100% Offline Local Storage** (Zero Telemetry, Zero Cloud Sync) |
@@ -128,13 +128,12 @@ It unifies an **advanced trade journaling engine**, a **real-time prop complianc
 
 ## 📦 Download & Installation
 
-### Available Packages for Version 2.3.0:
+### Available Packages for Version 2.5.2:
 
 | Package | Size | Description | Download Link |
 |---|---|---|---|
-| **`MATradeLab_Setup.exe`** | **~249 MB** | **Official Setup Installer (Recommended)**: Self-contained installer that automatically configures shortcuts and desktop links. | [📥 Download Setup](https://github.com/m4whw/MATradelab/releases/download/v2.3.0/MATradeLab_Setup.exe) |
-| **`MA.TradeLab.exe`** | **~249 MB** | **Direct Standalone Executable**: The complete self-contained executable ready to run immediately without installation. | [📥 Download EXE](https://github.com/m4whw/MATradelab/releases/download/v2.3.0/MA.TradeLab.exe) |
-| **`MA_TradeLab_v2.3.0_Portable.zip`** | **~93 MB** | **Portable Archive**: Extract to any directory or external USB drive and launch directly. | [📥 Download Portable ZIP](https://github.com/m4whw/MATradelab/releases/download/v2.3.0/MA_TradeLab_v2.3.0_Portable.zip) |
+| **`MATradeLab_Setup.exe`** | **~164 MB** | **Official Setup Installer (Recommended)**: Self-contained installer that automatically configures shortcuts and desktop links. | [📥 Download Setup](https://github.com/m4whw/MATradelab/releases/download/v2.5.2/MATradeLab_Setup.exe) |
+| **`MA_TradeLab_v2.5.2_Portable.zip`** | **~93 MB** | **Portable Archive**: Extract to any directory or external USB drive and launch directly. | [📥 Download Portable ZIP](https://github.com/m4whw/MATradelab/releases/download/v2.5.2/MA_TradeLab_v2.5.2_Portable.zip) |
 
 ### Installation Instructions:
 1. Download `MATradeLab_Setup.exe` from the table above.
@@ -148,18 +147,8 @@ It unifies an **advanced trade journaling engine**, a **real-time prop complianc
 ## 🔒 Security & Data Privacy
 
 - **Zero Cloud Storage**: All trade data, account numbers, strategy parameters, screenshots, and financial records reside strictly on your local computer.
-- **Hardware-Level Encryption**: Sensitive configuration parameters are secured using the Windows Data Protection API (DPAPI).
-- **Audit Verification**: Historical conditions are snapshot with SHA-256 integrity hashing to prevent accidental record tampering.
-
----
-
-## 📝 Release History
-
-- **v2.3.0**: Complete Financial Management module (multi-account ledger, subscription sentinel, net worth tracking, 5 vector charts), full account editing and cascade deletion, and refined UI localization.
-- **v2.2.0**: Studio human voice economic news countdown alerts (15m, 5m, 1m) in dual English and Arabic tracks.
-- **v2.1.0**: Direct localhost IPC connectors for MetaTrader 5, NinjaTrader 8, and ATAS.
-- **v2.0.0**: Prop Firm Intelligence Engine (PFIE) supporting 50+ evaluation firms with dynamic daily loss and trailing drawdown tracking.
-- **v1.0.0**: Initial release featuring Pre-Trade Decision Engine, weighted rule checklist scoring, and local SQLite journal.
+- **Credential Protection**: API keys and sensitive settings are encrypted with the Windows Data Protection API (DPAPI).
+- **Local-Only Connectors**: The MT5, NinjaTrader 8 and ATAS connector ports accept connections from your own computer only and reject browser and network requests.
 
 ---
 
@@ -182,7 +171,7 @@ It unifies an **advanced trade journaling engine**, a **real-time prop complianc
   - [1. سجل الصفقات الذكي والتحليل الإحصائي المتقدم](#1-سجل-الصفقات-الذكي-والتحليل-الإحصائي-المتقدم)
   - [2. محرك ذكاء وإدارة حسابات شركات التمويل](#2-محرك-ذكاء-وإدارة-حسابات-شركات-التمويل)
   - [3. محرك القرار الكمي وإدارة المخاطر قبل التنفيذ](#3-محرك-القرار-الكمي-وإدارة-المخاطر-قبل-التنفيذ)
-  - [4. الإدارة المالية الشاملة للتداول والمصاريف الشخصية (الإصدار 2.3.0)](#4-الإدارة-المالية-الشاملة-للتداول-والمصاريف-الشخصية-الإصدار-230)
+  - [4. الإدارة المالية الشاملة للتداول والمصاريف الشخصية](#4-الإدارة-المالية-الشاملة-للتداول-والمصاريف-الشخصية)
   - [5. المفكرة الاقتصادية الحية والتنبيهات الصوتية الاستوديو](#5-المفكرة-الاقتصادية-الحية-والتنبيهات-الصوتية-الاستوديو)
   - [6. الربط المباشر مع منصات التداول](#6-الربط-المباشر-مع-منصات-التداول)
   - [7. محول مستويات الجاما المؤسسية](#7-محول-مستويات-الجاما-المؤسسية)
@@ -190,7 +179,6 @@ It unifies an **advanced trade journaling engine**, a **real-time prop complianc
 - [🛠️ المواصفات الفنية للبرنامج](#️-المواصفات-الفنية-للبرنامج)
 - [📦 روابط التحميل والتثبيت السريع](#-روابط-التحميل-والتثبيت-السريع)
 - [🔒 الأمان وحماية الخصوصية](#-الأمان-وحماية-الخصوصية)
-- [📝 سجل التحديثات والإصدارات](#-سجل-التحديثات-والإصدارات)
 - [👨‍💻 المطور ومعلومات التواصل](#-المطور-ومعلومات-التواصل)
 
 ---
@@ -209,9 +197,9 @@ It unifies an **advanced trade journaling engine**, a **real-time prop complianc
 - **تدوين متعدد الأصول والأسواق**: تسجيل صفقات العقود الآجلة في بورصات CME و NYMEX (عقود NQ, ES, YM, RTY, GC, CL)، وتداول العملات الأجنبية (الفوركس)، والأسهم، مع حساب دقيق لقيمة النقاط، العمولات، والأرباح والخسائر الإجمالية والصافية.
 - **مقاييس إحصائية ورياضية متقدمة**:
   - **التوقع الرياضي ونسبة التوقع (Expectancy & Expectancy Ratio)**: لقياس الميزة التنافسية الحقيقية لكل دولار يتم المخاطرة به.
-  - **عامل الربح ومعدل الصفقات الرابحة ونسبة شارب (Profit Factor & Sharpe Ratio)**: لتقييم جودة الأداء الفعلي.
-  - **متوسط الربح والخسارة وأقصى حركة مواتية ومعاكسة (MFE & MAE)**.
-  - **تتبع عدد الصفقات الرابحة والخاسرة المتتالية ومدة فترات التراجع (Drawdown Duration)**.
+  - **عامل الربح ومعدل الصفقات الرابحة (Profit Factor & Win Rate)**: لتقييم جودة الأداء الفعلي.
+  - **متوسط الربح والخسارة وتتبع مضاعف المخاطرة (R-Multiple)**.
+  - **تتبع عدد الصفقات الرابحة والخاسرة المتتالية**.
 - **أرشفة بصرية متكاملة للشارتات**: إمكانية إرفاق لقطات الشاشة للشارت قبل وبعد الدخول، مع توثيق أسباب الدخول، وتقييم الحالة النفسية والانضباط الذهني.
 - **فلترة متقدمة متعددة الأبعاد**: تصفية فورية للصفقات حسب الحساب، الاستراتيجية، جلسة التداول (نيويورك صباحاً ومساءً، لندن، آسيا)، الرمز المالي، الاتجاه (شراء/بيع)، أو النطاق الزمني.
 
@@ -230,7 +218,7 @@ It unifies an **advanced trade journaling engine**, a **real-time prop complianc
 - **حساب آلي لحجم العقود والمخاطرة بالدولار**: ما عليك سوى تحديد وقف الخسارة بالنقاط ونسبة المخاطرة المسموحة من الحساب، ليقوم المحرك بحساب حجم العقود المناسب بدقة تامة.
 - **توصية نهائية حاسمة**: حكم قاطع ومباشر (**نفّذ / EXECUTE** أو **لا تنفّذ / DO NOT EXECUTE**) بناءً على تجاوز الحد الأدنى للدرجة المطلوبة.
 
-### 4. الإدارة المالية الشاملة للتداول والمصاريف الشخصية (الإصدار 2.3.0)
+### 4. الإدارة المالية الشاملة للتداول والمصاريف الشخصية
 - **دفتر أستاذ متعدد الحسابات المالية**: متابعة الحسابات المصرفية، النقد السائل (الكاش)، رؤوس أموال التداول لدى الوسطاء، ومحافظ العملات المشفرة.
 - **نزاهة محاسبية بدفتر القيود المزدوج**: التحويلات الداخلية بين حساباتك (مثل التحويل من البنك إلى حساب الوسيط) معزولة تماماً ولا تحتسب كإيرادات أو مصروفات لتفادي تشويه الأرقام الحقيقية.
 - **متتبع اشتراكات وتكاليف التداول المتخصصة**:
@@ -251,12 +239,13 @@ It unifies an **advanced trade journaling engine**, a **real-time prop complianc
 - **تنبيهات صوتية مسجلة باستوديو احترافي**:
   - عد تنازلي بأصوات بشرية حقيقية: قبل 15 دقيقة، 5 دقائق، ودقيقة واحدة من صدور الخبر عالي التأثير.
   - جرس تحذيري عند ثانية صدور الخبر لحماية الصفقات المفتوحة من الانزلاقات السعرية العنيفة.
-  - إعلانات صوتية فورية بنتائج الصدور مقارنة بالتقديرات.
+  - إعلانات صوتية فورية بنتائج الصدور عند نشر الرقم الفعلي في مصدر البيانات.
+- **تقويم أخبار T1 وبوابة الأخبار قبل التنفيذ**: مواعيد رسمية من BLS والفيدرالي الأمريكي وEIA بتوقيت نيويورك وبروكسل، ومحرك القرار يمنع الدخول داخل نافذة الخبر عالي التأثير (±2 دقيقة قاعدة شركة التمويل و±5 دقائق هامش أمان).
 - **تحكم صوتي كامل وثنائي اللغة**: مسارات صوتية مستقلة بالعربية والإنجليزية مع إمكانية تفعيل أو كتم التنبيه لكل حدث، والتحكم بمستوى الصوت واختبار الأصوات مباشرة.
 
 ### 6. الربط المباشر مع منصات التداول
 - **ربط فائق السرعة بدون تأخير عبر Localhost**: تواصل مباشر مع المنصات بدون الحاجة لأي وسيط خارجي:
-  - **MetaTrader 5 (MT5)**: إكسبيرت بلغة MQL5 على منفذ 18082 لمزامنة الصفقات فورياً بنقرة واحدة.
+  - **MetaTrader 5 (MT5)**: إكسبيرت بلغة MQL5 على منفذ 18082 لمزامنة الصفقات فورياً.
   - **NinjaTrader 8 (NT8)**: إضافة أصلية بلغة C# على منفذ 18080 لتدوين صفقات العقود الآجلة لحظياً.
   - **منصة ATAS**: موصل استراتيجي مدمج على منفذ 18081 لتدوين صفقات تدفق الأوامر (Order Flow).
 
@@ -274,12 +263,12 @@ It unifies an **advanced trade journaling engine**, a **real-time prop complianc
 | البند الفني | التفاصيل التقنية |
 |---|---|
 | **اسم البرنامج** | **MA TradeLab** |
-| **الإصدار الحالي** | **v2.3.0 (الإصدار الرسمي المستقر)** |
+| **الإصدار الحالي** | **v2.5.2 (الإصدار الرسمي المستقر)** |
 | **نظام التشغيل المدعوم** | Windows 10 / Windows 11 (معمارية 64-bit) |
 | **بيئة التشغيل** | .NET 8.0 Desktop Runtime (مدمجة بالكامل Self-Contained) |
 | **لغة البرمجة والمعمارية** | C# 12 / WPF بمعمارية Clean Architecture ونمط MVVM |
 | **محرك قاعدة البيانات** | SQLite مدمجة مع EF Core ومعاملات ACID الآمنة |
-| **خيارات الحزم** | مثبت برامجي مستقل (~249 ميجابايت) وحزمة محمولة Portable (~93 ميجابايت) |
+| **خيارات الحزم** | مثبت برامجي مستقل (~164 ميجابايت) وحزمة محمولة Portable (~93 ميجابايت)، مع بصمات SHA-256 في صفحة الإصدار |
 | **واجهة المستخدم** | واجهة ثنائية اللغة بالكامل (عربي وإنجليزي مع تبديل فوري لاتجاه الواجهة RTL / LTR) |
 | **التصميم والسمة البصرية** | نمط Cyberpunk داكن عالي التباين بلمسات ذهبية احترافية |
 | **حماية البيانات** | **تخزين محلي 100%** (خالٍ تماماً من التتبع أو التزامن السحابي) |
@@ -288,13 +277,12 @@ It unifies an **advanced trade journaling engine**, a **real-time prop complianc
 
 ## 📦 روابط التحميل والتثبيت السريع
 
-### الحزم الرسمية المتاحة للإصدار v2.3.0:
+### الحزم الرسمية المتاحة للإصدار v2.5.2:
 
 | اسم الحزمة | الحجم التقريبي | الوصف وطريقة الاستخدام | رابط التحميل المباشر |
 |---|---|---|---|
-| **`MATradeLab_Setup.exe`** | **~249 ميجابايت** | **المثبت الرسمي الموصى به**: مثبت تلقائي مستقل بالكامل، يقوم بإعداد البرنامج وإنشاء أيقونات سطح المكتب وقائمة البداية. | [📥 تحميل مثبت الإعداد (Setup)](https://github.com/m4whw/MATradelab/releases/download/v2.3.0/MATradeLab_Setup.exe) |
-| **`MA.TradeLab.exe`** | **~249 ميجابايت** | **ملف تنفيذي مباشر**: النسخة التنفيذية المستقلة الجاهزة للتشغيل الفوري بدون عملية تثبيت. | [📥 تحميل الملف التنفيذي المباشر (EXE)](https://github.com/m4whw/MATradelab/releases/download/v2.3.0/MA.TradeLab.exe) |
-| **`MA_TradeLab_v2.3.0_Portable.zip`** | **~93 ميجابايت** | **الحزمة المحمولة (Portable)**: قم بفك الضغط في أي مجلد أو فلاشة USB وشغّل البرنامج مباشرة مع حفظ بياناتك محلياً. | [📥 تحميل الحزمة المحمولة (ZIP)](https://github.com/m4whw/MATradelab/releases/download/v2.3.0/MA_TradeLab_v2.3.0_Portable.zip) |
+| **`MATradeLab_Setup.exe`** | **~164 ميجابايت** | **المثبت الرسمي الموصى به**: مثبت تلقائي مستقل بالكامل، يقوم بإعداد البرنامج وإنشاء أيقونات سطح المكتب وقائمة البداية. | [📥 تحميل مثبت الإعداد (Setup)](https://github.com/m4whw/MATradelab/releases/download/v2.5.2/MATradeLab_Setup.exe) |
+| **`MA_TradeLab_v2.5.2_Portable.zip`** | **~93 ميجابايت** | **الحزمة المحمولة (Portable)**: قم بفك الضغط في أي مجلد أو فلاشة USB وشغّل البرنامج مباشرة مع حفظ بياناتك محلياً. | [📥 تحميل الحزمة المحمولة (ZIP)](https://github.com/m4whw/MATradelab/releases/download/v2.5.2/MA_TradeLab_v2.5.2_Portable.zip) |
 
 ### خطوات التثبيت:
 1. حمّل ملف `MATradeLab_Setup.exe` من الجدول أعلاه.
@@ -308,18 +296,8 @@ It unifies an **advanced trade journaling engine**, a **real-time prop complianc
 ## 🔒 الأمان وحماية الخصوصية
 
 - **غياب تام للخوادم السحابية**: جميع صفقاتك، وأرقام حساباتك، وبيانات استراتيجياتك، وصور شارتاتك، وأرصدتك المالية مخزنة حصرياً على القرص الصلب لجهازك الخاص.
-- **تشفير عتادي لويندوز**: تشفير البيانات الحساسة باستخدام تقنية Windows Data Protection API (DPAPI).
-- **تدقيق تاريخي غير قابل للتعديل**: توثيق شروط كل صفقة فور تنفيذها باستخدام التجزئة المشفرة SHA-256 لضمان عدم العبث بالسجلات التاريخية.
-
----
-
-## 📝 سجل التحديثات والإصدارات
-
-- **v2.3.0**: إضافة قسم الإدارة المالية المتكاملة (دفتر الحسابات المتعدد، رصد الاشتراكات وتنبيهات التجديد، تتبع صافي الثروة، 5 مخططات بيانية)، وتفعيل التعديل والحذف الآمن المتسلسل للحسابات.
-- **v2.2.0**: إضافة المفكرة الاقتصادية وتنبيهات الاستوديو الصوتية البشرية للعد التنازلي (15د، 5د، 1د) باللغتين العربية والإنجليزية.
-- **v2.1.0**: إضافة الربط المباشر عالي السرعة عبر Localhost مع منصات MT5 و NinjaTrader 8 و ATAS.
-- **v2.0.0**: إطلاق محرك ذكاء شركات التمويل (PFIE) مع دعم أكثر من 50 شركة ورصد مباشر لحدود الخسارة اليومية والتراجع المتحرك.
-- **v1.0.0**: الإصدار التأسيسي الأول الذي ضم محرك القرار قبل التداول، وقوائم الشروط المرجحة، وسجل SQLite المحلي.
+- **حماية بيانات الدخول**: تشفير مفاتيح API والإعدادات الحساسة باستخدام Windows Data Protection API (DPAPI).
+- **موصلات محلية فقط**: منافذ موصلات MT5 وNinjaTrader 8 وATAS تقبل الاتصال من جهازك فقط وترفض أي طلب من المتصفح أو الشبكة.
 
 ---
 
