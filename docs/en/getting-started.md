@@ -49,7 +49,7 @@ MA TradeLab v2.5.4 introduces an automatic MT5 trade-import engine that does not
 3. Right-click anywhere in the trade history area.
 4. Set the desired date range (e.g., **All History** or **Last 3 Months**).
 5. Right-click again, hover over **Report**, and select **HTML (Internet Explorer)** or **Open XML (MS Office Excel)**.
-6. Save the file to your desktop (e.g., `ReportHistory-1515037033.html`).
+6. Save the file to your desktop (e.g., `ReportHistory-12345678.html`).
 
 ### Step-by-Step Import into MA TradeLab:
 1. In MA TradeLab, open the left navigation menu and select **Import / Export → MT5 Synchronization**.
