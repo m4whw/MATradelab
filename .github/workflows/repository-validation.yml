@@ -1,0 +1,124 @@
+name: Repository Validation & Integrity
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Structure, Security & Links Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Verify Required Files & Directory Structure
+        run: |
+          echo "Verifying presence of essential public files and documentation..."
+          required_files=(
+            "README.md"
+            "README.ar.md"
+            ".gitignore"
+            "index.html"
+            "robots.txt"
+            "sitemap.xml"
+            "favicon.ico"
+            "logo.png"
+            "assets/branding/logo.png"
+            "assets/branding/favicon.ico"
+            "docs/en/installation.md"
+            "docs/en/getting-started.md"
+            "docs/en/features.md"
+            "docs/en/changelog.md"
+            "docs/ar/installation.md"
+            "docs/ar/getting-started.md"
+            "docs/ar/features.md"
+            "docs/ar/changelog.md"
+          )
+          missing=0
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "::error::Missing required file: $file"
+              missing=$((missing + 1))
+            else
+              echo "  OK: $file"
+            fi
+          done
+          if [ $missing -gt 0 ]; then
+            echo "::error::Validation failed: $missing required file(s) missing."
+            exit 1
+          fi
+          echo "All required files are present."
+
+      - name: Security Scan (Forbidden Source Code, Secrets & DBs)
+        run: |
+          echo "Scanning repository for prohibited private source code, secrets, or databases..."
+          violations=0
+          
+          # Prohibited file extensions
+          forbidden_extensions=("*.cs" "*.csproj" "*.sln" "*.vb" "*.fs" "*.db" "*.sqlite" "*.sqlite3" "*.db-wal" "*.mdf" "*.ldf" "*.env" "*.pem" "*.key" "*.pfx")
+          
+          for ext in "${forbidden_extensions[@]}"; do
+            matches=$(find . -not -path "*/.git/*" -name "$ext")
+            if [ -n "$matches" ]; then
+              echo "::error::Security violation: Prohibited file found matching $ext:"
+              echo "$matches"
+              violations=$((violations + 1))
+            fi
+          done
+
+          if [ $violations -gt 0 ]; then
+            echo "::error::Security check failed with $violations violation(s)."
+            exit 1
+          fi
+          echo "Security scan passed: Zero prohibited source files or secrets detected."
+
+      - name: Verify Relative Documentation Links
+        run: |
+          python3 -c '
+          import os, re, sys
+
+          md_files = [
+              "README.md",
+              "README.ar.md",
+              "docs/en/installation.md",
+              "docs/en/getting-started.md",
+              "docs/en/features.md",
+              "docs/en/changelog.md",
+              "docs/ar/installation.md",
+              "docs/ar/getting-started.md",
+              "docs/ar/features.md",
+              "docs/ar/changelog.md"
+          ]
+
+          link_pattern = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+          errors = 0
+
+          for md in md_files:
+              if not os.path.exists(md):
+                  continue
+              with open(md, "r", encoding="utf-8") as f:
+                  content = f.read()
+              
+              base_dir = os.path.dirname(md)
+              for match in link_pattern.finditer(content):
+                  link = match.group(2).strip()
+                  # Ignore web URLs, anchors, mailto, etc.
+                  if link.startswith(("http://", "https://", "mailto:", "#")):
+                      continue
+                  # Strip anchor if present
+                  target_file = link.split("#")[0]
+                  if not target_file:
+                      continue
+                  resolved = os.path.normpath(os.path.join(base_dir, target_file))
+                  if not os.path.exists(resolved):
+                      print(f"Broken link in {md}: {link} -> {resolved} does not exist", file=sys.stderr)
+                      errors += 1
+
+          if errors > 0:
+              sys.exit(1)
+          print("All documentation relative links successfully resolved.")
+          '

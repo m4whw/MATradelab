@@ -1,5 +1,122 @@
+# ====================================================================
+# MA TradeLab Public Repository - .gitignore
+# Comprehensive protection against accidental commits of binaries,
+# source code, private configs, databases, and build artifacts.
+# ====================================================================
+
+# OS generated files
 Thumbs.db
+ehthumbs.db
 Desktop.ini
+$RECYCLE.BIN/
 .DS_Store
-*.log
+.AppleDouble
+.LSOverride
+._*
+
+# Temporary files and development artifacts
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
 deploy.bat
+
+# Source code protection (Strictly prohibited in public release repository)
+*.cs
+*.csproj
+*.sln
+*.vbproj
+*.fsproj
+*.props
+*.targets
+*.user
+*.userprefs
+*.suo
+*.slnx
+*.py
+*.ts
+*.tsx
+*.jsx
+*.vue
+*.mql5
+*.mq5
+*.mq4
+*.pine
+
+# Build & compilation outputs
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+ARM/
+ARM64/
+publish/
+publish-final/
+artifacts/
+out/
+target/
+build/
+dist/
+
+# .NET & IDE directories
+.vs/
+.vscode/
+.idea/
+.dotnet/
+_ReSharper*/
+*.rsuser
+
+# Compiled binaries & archives (Release assets must be hosted via GitHub Releases)
+*.exe
+*.dll
+*.so
+*.dylib
+*.msi
+*.msm
+*.msp
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.nupkg
+*.snupkg
+
+# Database & local data files
+*.db
+*.sqlite
+*.sqlite3
+*.db-wal
+*.db-shm
+*.mdf
+*.ldf
+*.ndf
+
+# Logs and test results
+*.log
+*.trx
+*.coverage
+*.coveragexml
+TestResults/
+
+# Credentials, keys, and private configuration
+*.env
+*.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+*.cer
+*.crt
+*.secret
+appsettings*.json
+
+# Allow explicit public branding assets
+!assets/branding/logo.png
+!assets/branding/favicon.ico
+!logo.png
+!favicon.ico
